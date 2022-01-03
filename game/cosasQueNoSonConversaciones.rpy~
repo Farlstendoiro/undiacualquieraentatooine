@@ -1,0 +1,157 @@
+﻿# En el Hangar / cuando recibas Investigación Cerrada y Oscilador y Permiso de Despegue. Lo llamaré ComprobarLosTres
+# Esto se puede hacer en el Hangar o cada vez que recibas uno de estos tres.
+
+
+label ComprobarLosTres:
+    "TBA Comprobando si tienes los tres"
+    "%(itemOscilador)d%(itemInvestigacion)d%(itemPermisoDespegue)d"
+    if itemOscilador == 1 and itemInvestigacion == 1 and itemPermisoDespegue == 1:
+        "TBA ¡Has conseguido todos los objetos necesarios para acceder a tu nave, repararla y despegar!"
+    else:
+        "TBA Se ve que no tienes todo."
+    return
+        
+label teDanPaliza:
+    if apalizadoPorTropas < 1:
+        show stormtrooper at left
+        show stormtrooper2 at right
+        show stormtrooper3
+        "TBA. Aparecen stormtroopers, te identifican, van a darte una paliza. Te empiezan a zurrar."
+        "TBA. ¿Qué haces?"
+        menu:
+            "Pelear.":
+                "TBA. Sus armaduras les protegen. No logras dañarles"
+                "TBA. Te dan una buena tunda."
+            "Quitar un bláster a un soldado.":
+                "TBA. Consigues quitárselo; pero porque te lo han puesto fácil."
+                "TBA. ¡Tiene un arma! Abatidle."
+                return
+            "Usar el arma jawa." if itemArmaJawa == 1:
+                "TBA. ¡Tiene un arma! Abatidle."
+                return
+            "Negociar con ellos.":
+                "TBA. No les interesa."
+                "TBA. ¿Quieres intentar sobornarles?"
+                menu:
+                    "Ofrecer un soborno.":
+                        "TBA. Fingen ofenderse y te matan."
+                        return
+                    "Probar otra opción.":
+                        "TBA. Suficiente, te quedas apalizado."
+                        "TBA. Te dan una buena tunda."
+            "Escapar.":
+                "TBA. No logras escapar."
+                "TBA. Te dan una buena tunda."
+
+        "TBA paliza. Ahora te rescata Thok; creo que está muerto. Wenny Boggs te encuentra tirado. Alguien."
+        hide stormtrooper
+        hide stormtrooper2
+        hide stormtrooper3
+        "TBA Pasa algún diálogo más."
+        show thok
+        "TBA Este tipo saca un par de bebidas alcohólicas (elegir) y te da una, porque te vendrá bien para curarte. Charláis un rato."
+        "TBA. ¿Qué tal desde que murió Jabba? ¿Te vas a meter a BH?"
+        "TBA. No lo sé; pero desde luego no colaboraré con el Imperio, como hace Crimelord 2"
+        "TBA. Espera. ¿Crimelord 2 colabora con el Imperio? ¿Puedes demostrarlo?"
+        "TBA. Yo no. Pero ve a por el Contrabandista de antes."
+        "TBA. Ephant sabía de estas cosas, era el gunrunner de Jabba."
+        "TBA. Me decía, si quieres saber para quién trabaja alguien, mira de dónde viene...y se refería al planeta."
+        $ apalizadoPorTropas = 1
+        
+    jump go_Callejon
+
+label exploraChoza:
+
+    scene bg choza ermitano
+
+    if itemDiarioErmitano == 0:
+        "TBA. Encuentras en la choza el diario de un ermitaño, PUEDE ESTAR garabateado en la pared."
+        $ itemDiarioErmitano = 1
+    else:
+        "TBA. El diario sigue aquí, bla bla."
+
+    "¿Quieres leer el diario del ermitaño?"
+    menu:
+        "Leer el diario ahora.":
+            "TBA. Mensaje detallado del texto del diario. Da importante información: La rata gigante se transforma, no es una rata."
+            $ conoceClawditaA = 1
+        "No leer el diario ahora.":
+            "TBA. Dejas el diario, sigues adelante."
+    jump go_RutaDesierto2
+
+
+
+label encontrasteActivosRebeldes:
+    scene bg activos rebeldes
+
+    $ activosRebeldes = 1
+    "TBA. Mensaje detallado describiendo los activos rebeldes."
+
+    jump go_RutaDesierto4
+
+
+# UNUSED:
+
+label mapa:
+ 
+   scene bg mapa ground
+
+   window hide None
+
+   $ result = renpy.imagemap("bg mapa ground.png","bg mapa hover.png",[(31, 232, 136, 291, "hangar"),(158, 135, 262, 195, "tienda"),(281, 38, 386, 98, "desierto")])
+
+   if result == "hangar":
+      "Has elegido hangar."
+      if posicion in ["hangar", "tienda"]:
+         jump hangar
+      else:
+         "...pero no puedes ir desde [posicion]."
+   elif result == "tienda":
+      "Has elegido tienda."
+      if posicion in ["hangar", "tienda", "desierto"]:
+# (que en este caso sí que son todas las posiciones pero da igual)
+         jump tienda
+      else:
+         "...pero no puedes ir desde [posicion]."
+   elif result == "desierto":
+      "Has elegido desierto."
+      if posicion in ["tienda", "desierto"]:
+         jump desierto
+      else:
+         "...pero no puedes ir desde [posicion]."
+   else:
+      "¿Cómo hemos llegado hasta aquí?"
+      jump mapa
+
+   jump mapa
+
+label hangar:
+
+    scene bg hangar
+    with fade
+    $ posicion = "hangar"
+
+# INTENTANDO QUE FUNCIONE INVENTARIO, NO VEO NADA
+    screen pantallainventario():
+        button:
+            xpos 1.0
+            ypos 0
+            text "Inventario"
+            action Jump(inventario)
+# QUIZÁ ESTO: https://www.youtube.com/watch?v=SDXG17W0cBA
+# FIN DE INVENTARIO
+
+    "Estás en el hangar."
+
+label inventario:
+
+#   PENDIENTE HACER; AL MENOS QUE EXISTA
+    you "Esto es el inventario***"
+
+    jump expression posicion
+
+label porsiaca_cosasquenosonconversaciones:
+    scene bg unused celda
+    with fade
+    show p
+    p "Has llegado al label porsiaca_cosasquenosonconversaciones, que debería no ser usado nunca. Esto ha salido mal."

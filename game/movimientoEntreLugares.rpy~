@@ -1,0 +1,252 @@
+﻿label go_CallePrincipal:
+
+    menu:
+        "Ir a tu hangar.":
+            jump Hangar
+        "Ir a la cantina.":
+            jump Cantina
+        "Ir a la Oficina Imperial.":
+            jump OficinaImperial
+        "Ir a las afueras de la ciudad.":
+            jump TiendaJawa
+        "Cancelar.":
+            jump CallePrincipal
+
+label go_Cantina:
+
+    "jugarLabria %(jugarLabria)d." 
+    menu:
+        "Ir a la trastienda." if jugarLabria > 2:
+            jump Trastienda
+        "Salir a la calle.":
+            jump CallePrincipal
+        "Cancelar.":
+            jump Cantina
+
+label go_Hangar:
+
+    menu:
+        "Ir a la calle principal.":
+            jump CallePrincipal
+        "Ir a otro hangar cercano.":
+            jump OtroHangar
+        "Subir a tu nave." if yaPuedesIrATuNave == 1:
+            jump TuNave
+        "Cancelar.":
+            jump Hangar
+
+label go_OficinaImperial:
+
+    menu:
+        "Ir a la calle principal.":
+            jump CallePrincipal
+        "Cancelar.":
+            jump OficinaImperial
+
+label go_Trastienda:
+
+    menu:
+        "Volver a la cantina.":
+            jump Cantina
+        "Salir por la puerta de servicio." if crimelord2Activo == 1:
+            jump Callejon
+        "Cancelar.":
+            jump Trastienda
+
+label go_OtroHangar:
+
+    menu:
+        "Ir al hangar de tu nave.":
+            jump Hangar
+        "Cancelar.":
+            jump OtroHangar
+
+label go_Callejon:
+
+    menu:
+        "Ir a la calle principal.":
+            jump CallePrincipal
+        "Cancelar.":
+            jump Callejon
+
+label go_CasaGraf:
+
+    menu:
+        "Ir a la finca de Sedi Fisk.":
+            jump SediFisk
+        "Cancelar.":
+            jump CasaGraf
+
+label go_SediFisk:
+
+    menu:
+        "Ir a las afueras de la ciudad.":
+            jump TiendaJawa
+        "Ir hacia el Palacio de Jabba el Hutt.":
+            jump PalacioJabbaExt
+        "Ir a casa de Graf." if preguntarPermisoEnCantina == 2:
+            jump CasaGraf
+        "Cancelar.":
+            jump SediFisk
+
+label go_TiendaJawa:
+
+    menu:
+        "Ir hacia la ciudad.":
+            jump CallePrincipal
+        "Ir hacia la finca de Sedi Fisk.":
+            jump SediFisk
+        "Ir hacia las granjas de humedad.":
+            jump Granjas
+        "Ir hacia las Llanuras de Jundlandia.":
+            jump ZonaTusken1
+        "Cancelar.":
+            jump TiendaJawa
+
+label go_ZonaTusken1:
+
+    menu:
+        "Volver hacia la ciudad.":
+            jump TiendaJawa
+        "Adentrarse en las Llanuras de Jundlandia.":
+            jump ZonaTusken2
+        "Cancelar.":
+            jump ZonaTusken1
+
+label go_ZonaTusken2:
+
+    menu:
+        "Regresar hacia la civilización.":
+            jump ZonaTusken1
+        "Cancelar.":
+            jump ZonaTusken2
+
+label go_RecientesAtaques:
+
+# Ir hacia Mos Gamos no depende de una variable porque en cuanto llegues, te dan un mensaje y puedes ir."
+    menu:
+        "Volver a las granjas de humedad.":
+            jump Granjas
+        "Ir hacia Mos Gamos.":
+            jump MosGamos
+        "Cancelar.":
+            jump RecientesAtaques
+
+label go_MosGamos:
+
+    menu:
+        "Volver a la zona atacada por los tusken.":
+            jump RecientesAtaques
+        "Cancelar.":
+            jump MosGamos
+
+label go_PalacioJabbaExt:
+
+    menu:
+        "Volver a la finca de Sedi Fisk.":
+            jump SediFisk
+        "Alejarse hacia el Mar de Dunas." if asustasteBandido == 1:
+            jump RutaDesierto1
+        "Entrar en el Palacio de Jabba (!!!).":
+            jump PalacioJabbaInt
+        "Cancelar.":
+            jump PalacioJabbaExt
+
+label go_PalacioJabbaInt:
+
+    menu:
+        "Salir del Palacio por la puerta principal.":
+            jump PalacioJabbaExt
+        "Perseguir al Bandido hacia el Mar de Dunas." if asustasteBandido == 1 and bandidoCapturado == 0:
+            "TBA. El Bandido ha huído hacia el Mar de Dunas. Es imperativo perseguirle."
+            jump RutaDesierto1
+        "Salir hacia el Mar de Dunas." if asustasteBandido == 1 and bandidoCapturado == 1:
+            "TBA. Puedes ir hacia el Mar de Dunas, pero no es una urgencia. El Bandido ya está preso."
+            jump RutaDesierto1
+        "Cancelar.":
+            jump PalacioJabbaInt
+
+label go_RutaDesierto1:
+
+# Esto es sólo desierto.
+    menu:
+        "Volver hacia el Palacio de Jabba.":
+            jump PalacioJabbaExt
+        "Adentrarse más en el Mar de Dunas.":
+            jump RutaDesierto2
+        "Cancelar.":
+            jump RutaDesierto1
+
+label go_RutaDesierto2:
+
+# Es cosa tuya fijarte en la cabaña del hermitaño, pero no en el árbol de movimiento
+    menu:
+        "Retroceder hacia el Palacio de Jabba.":
+            jump RutaDesierto1
+        "Adentrarse aún más en el Mar de Dunas.":
+            jump RutaDesierto3
+        "Cancelar.":
+            jump RutaDesierto2
+
+label go_RutaDesierto3:
+
+# Aquí el dragón te bloquea
+    menu:
+        "Volver hacia la civilización.":
+            jump RutaDesierto2
+        "Adentrarse más allá de la guarida del dragón." if dragon == 2:
+            jump RutaDesierto4
+        "Cancelar.":
+            jump RutaDesierto3
+
+label go_RutaDesierto4:
+
+# Es cosa tuya fijarte en los activos rebeldes; una vez más, no en el árbol de movimiento
+    menu:
+        "Retroceder hacia la guarida del dragón.":
+            jump RutaDesierto3
+        "Avanzar hacia el cañón.":
+            jump RutaDesierto5
+        "Cancelar.":
+            jump RutaDesierto4
+
+label go_RutaDesierto5:
+
+    menu:
+        "Volver atrás por el Mar de Dunas.":
+            jump RutaDesierto4
+        "Cancelar.":
+            jump RutaDesierto5
+
+label go_Granjas:
+
+    menu:
+        "Ir a la Granja de Darklighter.":
+            jump GranjaDarklighter
+        "Ir a la Granja de Loquoy.":
+            jump GranjaLoquoy
+        "Volver a la ciudad.":
+            jump TiendaJawa
+        "Ir a la zona de recientes ataques." if descubrirDondeAtaques == 1:
+            jump RecientesAtaques
+        "Cancelar.":
+            jump Granjas
+
+label go_GranjaDarklighter:
+
+    menu:
+        "Salir al exterior.":
+            jump Granjas
+        "Ir hacia la zona de recientes ataques." if descubrirDondeAtaques == 1:
+            jump RecientesAtaques
+        "Cancelar.":
+            jump GranjaDarklighter
+
+label go_GranjaLoquoy:
+
+    menu:
+        "Salir al exterior.":
+            jump Granjas
+        "Cancelar (Seguir hablando con gente).":
+            jump GranjaLoquoy
+

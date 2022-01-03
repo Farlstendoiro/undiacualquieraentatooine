@@ -1,0 +1,525 @@
+﻿label CallePrincipal:
+
+    scene bg calle principal
+
+    "TBA. Calle principal"
+
+    if itemDeclaraJent == 0:
+        jump hablarJentEnLaCalle
+
+    jump go_CallePrincipal
+
+label Cantina:
+
+    scene bg cantina
+    show camarero
+    show kabe at left
+
+    "TBA. cantina"
+
+    if jugarLabria == 1 or jugarLabria == 2:
+        show labria at right
+        "TBA El tipo de aspecto borracho ACABA DE LLEGAR."
+    if informacionImplicaCrimelord2 == 1 and crimelord2Activo == 1:
+        show crimelord2 at right
+        "TBA Mira al crimelord 2 aquí mismo."
+
+    menu:
+        "¿Quieres hablar con alguien?"
+        "Hablar con el camarero.":
+            jump hablarCamarero
+        "Hablar con Kabe.":
+            jump hablarKabe
+        "Hablar con Labria." if jugarLabria == 1 or jugarLabria == 2:
+            jump hablarLabria
+        "Hablar con Crimelord 2" if informacionImplicaCrimelord2 == 1 and crimelord2Activo == 1:
+            jump hablarCrimelord2EnCantina
+        "No hablar con nadie":
+            pass
+
+    jump go_Cantina
+
+label siguesEnCantina:
+# La diferencia es que vienes de rebote y puede que quieras hacer más cosas. Quitar las descripciones de intro
+
+    "TBA Sigues En Cantina."
+    scene bg cantina
+    show camarero
+    show kabe at left
+
+    if jugarLabria == 1 or jugarLabria == 2:
+        show labria at right
+    if informacionImplicaCrimelord2 == 1 and crimelord2Activo == 1:
+        show crimelord2 at right
+
+    menu:
+        "¿Quieres hablar con alguien ahora?"
+        "Hablar con el camarero.":
+            jump hablarCamarero
+        "Hablar con Kabe.":
+            jump hablarKabe
+        "Hablar con Labria." if jugarLabria ==1 or jugarLabria == 2:
+            jump hablarLabria
+        "Hablar con Crimelord 2" if informacionImplicaCrimelord2 == 1 and crimelord2Activo == 1:
+            jump hablarCrimelord2EnCantina       
+        "No hablar con nadie":
+            pass
+
+    jump go_Cantina
+
+
+label Hangar:
+
+    scene bg hangar
+
+    "TBA. hangar"
+
+    if itemOscilador == 1 and itemPermisoDespegue == 1 and itemInvestigacion == 1:
+        "TBA: Tienes todo lo necesario. Puedes subir a tu nave, y dejar atrás este planeta de locos."
+        jump TuNave
+
+    jump go_Hangar
+
+label OficinaImperial:
+
+    scene bg oficina imperial
+    show funcionario
+
+    "TBA. oficina imperial"
+    
+    "TBA preguntarKabePorCazador %(preguntarKabePorCazador)d"
+    
+    if preguntarKabePorCazador == 2:
+        jump puedesHablarConCazador
+    else:
+        "TBA Kabe no te ha soplado que aquí se pregunta por el cazador (O ya has hablado con el BH)."
+        "TBA ¿Quieres hablar con el funcionario imperial?"
+        menu:
+            "Sí.":
+                "TBA Es un burócrata inútil."
+            "No.":
+                pass        
+
+    jump go_OficinaImperial
+
+label puedesHablarConCazador:
+
+#  HAS IDO A OFICINA IMPERIAL, ESTÁ EL CAZADOR, PUEDES HABLAR CON ÉL
+    funcionario "TBA. He oído que quieres hablar con un cazarrecompensas. Hay uno por aquí. ¿Quieres que le llame?"
+    menu:
+        "Claro, hablaré con el cazarrecompensas":
+            jump hablarCazador
+        "Quizá más tarde.":
+            funcionario "Avísame si cambias de opinión."
+    jump go_OficinaImperial
+
+label Trastienda:
+
+    scene bg trastienda
+
+    jump hablarCrimelords
+
+    "TBA. trastienda"
+
+    jump go_Trastienda
+
+label OtroHangar:
+
+    scene bg otro hangar
+    show contrabandista
+
+    if crimelord2Activo == 2:
+        show copiloto
+
+    "TBA. otro hangar"
+    "TBA. Hay un 'piloto de aspecto sospechoso'."
+
+    if crimelord2Activo == 2:
+        "TBA. También está otro tipo que debe ser su copiloto."
+
+    menu:
+        "¿Quieres hablar con el piloto de aspecto sospechoso?"
+        "Hablar con el piloto de aspecto sospechoso.":
+            jump hablarContrabandista
+        "No hablar con el piloto de aspecto sospechoso.":
+            pass
+
+    jump go_OtroHangar
+
+label Callejon:
+
+    scene bg callejon
+
+    "TBA. callejon"
+
+    if apalizadoPorTropas == 0:
+        jump teDanPaliza
+
+    jump go_Callejon
+
+label TuNave:
+
+    scene bg tu nave
+
+    "TBA. tu nave"
+    "Ending."
+    "TBA: Pending todo el rollo de encontrarse con Belia Darzu y lo de que depende de cuánto sepas.***"
+    "TBA: ¡Y la animación! Sobre todo la animación.***"  
+    "TBA: Final correcto de programa"
+    return
+
+label CasaGraf:
+
+    scene bg casa graf
+    show graf
+
+    "TBA. casa graf. Está Graf, entretenido mirando algo."
+
+    menu:
+        "¿Quieres hablar con Graf?"
+        "Sí, hablaré con Graf.":
+            if primerGraf == 0:
+                "TBA inicio conversación presentarte, busco a un tipo llamado Graf."
+                $ primerGraf = 1
+            else:
+                "TBA Hola, [playerName]."
+            jump hablarGraf
+        "No le dirijo la palabra.":
+            "TBA OK no hablas con Graf."
+
+    jump go_CasaGraf
+
+label SediFisk:
+
+    scene bg sedi fisk
+
+    "TBA. sedi fisk"
+
+    jump go_SediFisk
+
+label TiendaJawa:
+
+    scene bg TiendaJawa
+    show wassak
+
+    "TBA. tienda jawa"
+
+    menu:
+        "¿Quieres hablar con el jawa?"
+        "Sí":
+            playerName "M'um m’aloo"
+            wassak "Hola también a ti."
+            jump hablarWassak
+        "No":
+            pass
+
+    jump go_TiendaJawa
+
+label ZonaTusken1:
+
+    scene bg zona tusken 1
+
+    if hablarTuskens == 0:
+        jump hablarTuskens
+    else:
+        "TBA. zona tusken 1"
+
+    jump go_ZonaTusken1
+
+label ZonaTusken2:
+
+    scene bg zona tusken 2
+
+    "zona tusken 2"
+    
+    jump hablarBob
+
+    jump go_ZonaTusken2
+
+label RecientesAtaques:
+
+    scene bg recientes ataques
+
+    if visitasteRecientesAtaques == 0:
+        "TBA, Mensaje de que descubres pistas en la arena de que hay tráfico hacia Mos Gamos. Una ciudad que debería estar deshabitada."
+        "TBA, desde aquí puedes ir a Mos Gamos."
+    else:
+        "TBA, mensaje diferente de que aquí está el camino allá."
+
+    jump go_RecientesAtaques
+
+label MosGamos:
+
+    scene bg mos gamos
+
+    if visitasteMosGamos == 0:
+        "TBA. Resulta que está en uso, protegido por mercenarios weequays"
+        "TBA. Pasear por el puerto espacial, vigilando varias cosas"
+        "TBA. Esquivando weequays. Si tienes un arma, puedes usarla unas pocas veces.***"
+        "TBA. Si consigues recorrer el laberinto, obtienes pruebas de que los tusken están allí y que los están metiendo en naves"
+        "TBA. El organizador es un droide. Puedes matarlo y llevarte su cabeza. Será prueba suficiente."
+        $ itemCabezaDroide = 1
+        $ visitasteMosGamos = 1
+    else:
+        "TBA. Puedes pasear por la ciudad, pero no hay nada de interés."
+
+    jump go_MosGamos
+
+label PalacioJabbaExt:
+
+    scene bg palacio jabba ext
+
+    "TBA. palacio jabba exterior"
+
+    jump go_PalacioJabbaExt
+
+label PalacioJabbaInt:
+
+    scene bg palacio jabba int
+    show monje1
+    show monje2 at right
+
+    "TBA. palacio jabba interior"
+    
+    if asustasteBandido == 1 and bandidoCapturado == 0:
+        "TBA. Los monjes te dejan paso libre; comprenden que vas a ir por el Bandido y pasan de ti."
+        jump go_PalacioJabbaInt
+    else:
+        "TBA. Puedes hablar con los monjes."
+        menu:
+            "Hablar con monjes.":
+                jump hablarMonjes
+            "No hablar con monjes.":
+                pass
+
+    jump go_PalacioJabbaInt
+
+label RutaDesierto1:
+
+    scene bg ruta desierto 1
+
+    if visitasteCamino1 == 0:
+        "TBA. Hablar de dónde estás, supongo que mencionar un cañón."
+        $VisitasteCamino1 = 1
+    elif visitasteCamino1 == 1 and bandidoCapturado == 0:
+        "TBA. Por no repetir el texto, resumir el anterior."
+    elif visitasteCamino1 == 1 and bandidoCapturado == 1:
+        "TBA. Te menciona en plan abstracto que por aquí pillate al bandido..."
+
+    jump go_RutaDesierto1
+
+label RutaDesierto2:
+
+    scene bg ruta desierto 2
+
+    if visitasteCamino2 == 0:
+        "TBA. Bla bla. Mencionar la choza abandonada de un ermitaño. - Sólo sale la primera vez"
+        $VisitasteCamino2 = 1
+        menu:
+            "Ir a otro sitio.":
+                jump go_RutaDesierto2
+            "Explorar la choza.":
+                jump exploraChoza
+
+    elif visitasteCamino2 == 1 and itemDiarioErmitano == 0 and bandidoCapturado == 0:
+        "TBA. Es la 2ª vez que pasas por aquí. Te menciona la choza; puedes buscar allí, pero sabes que el bandido siguió adelante."
+        menu:
+            "Ir a otro sitio (Seguir persiguiendo al Bandido).":
+                jump go_RutaDesierto2
+            "Explorar la choza.":
+                jump exploraChoza
+
+    elif visitasteCamino2 == 1 and itemDiarioErmitano == 0 and bandidoCapturado == 1:
+        "TBA. Es la 2ª vez que pasas por aquí. Vuelves a ver la choza, ya la conoces. No hay que preocuparse por el Bandido."
+        menu:
+            "Explorar la choza.":
+                jump exploraChoza
+            "Seguir tu camino.":
+                jump go_RutaDesierto2
+
+
+    elif visitasteCamino2 == 1 and itemDiarioErmitano == 1 and bandidoCapturado == 0:
+        "TBA. Te insiste en el camino por el que fue el Bandido; hay que perseguirle."
+        "TBA. Te menciona de pasada la cabaña; ya no te deja visitarla (o si insistes, que te deje pero para un mensaje de una línea)"
+        menu:
+            "Explorar la choza.":
+                "TBA. Aquí ya no hay nada más que ver."
+            "Seguir tu camino.":
+                jump go_RutaDesierto2
+
+    elif visitasteCamino2 == 1 and itemDiarioErmitano == 1 and bandidoCapturado == 1:
+        "TBA. Aquí no hay nada que hacer. Tienes los restos de la cabaña del ermitaño, el camino hacia el desierto, el camino hacia atrás."
+        menu:
+            "Explorar la choza.":
+                "TBA. Aquí ya no hay nada más que ver."
+            "Seguir tu camino.":
+                jump go_RutaDesierto2
+
+    jump go_RutaDesierto2
+
+label RutaDesierto3:
+
+    if dragon == 0:
+        scene bg ruta desierto 3
+        "TBA. Descripción detallada del cañón y del dragón."
+        $ dragon = 1
+    elif dragon == 1:
+        scene bg ruta desierto 3
+        "Yep. El dragón sigue aquí."
+    else:
+        scene bg ruta desierto 3 sin dragon
+        "TBA. Tusken Bob se ha encargado del dragón. Ahora puedes seguir adelante."
+
+    jump go_RutaDesierto3
+
+label RutaDesierto4:
+
+    scene bg ruta desierto 4
+
+# Activos Rebeldes: No lo has visto 0; encontrado 1. Cuando hables con Graf, 2.
+
+    "TBA. YO DIRÍA QUE ESTO ES EL CAÑÓN, DONDE JENT ESTRELLÓ SU T-16. DILO.***"
+    "TBA. VisitasteCamino4: %(visitasteCamino4)d."
+    "activosRebeldes: %(activosRebeldes)d. bandidoCapturado: %(bandidoCapturado)d."
+
+    if visitasteCamino4 == 0:
+        "TBA. Bla bla. Mencionar claro indicio de activos rebeldes en la zona, puedes buscar allí."
+        "TBA. NO SABES si Bandido siguió adelante o está allí."
+        "TBA. ¿Quieres seguir adelante por el desierto, o explorar la zona donde están los activos rebeldes?"
+        $visitasteCamino4 = 1
+        menu:
+            "TBA. Seguir adelante por el desierto.":
+                jump go_RutaDesierto4
+            "TBA. Explorar la zona de activos rebeldes.":
+                jump encontrasteActivosRebeldes
+
+    elif visitasteCamino4 == 1 and activosRebeldes == 0 and bandidoCapturado == 0:
+        "TBA. Es la 2ª vez que pasas por aquí, pero el mensaje es similar. Bandido sigue suelto."
+        "TBA. Bla bla. Mencionar claro indicio de activos rebeldes en la zona, puedes buscar allí."
+        "TBA. NO SABES si Bandido siguió adelante o está allí."
+        "TBA. ¿Quieres seguir adelante por el desierto, o explorar la zona donde están los activos rebeldes?"
+        $visitasteCamino4 = 1
+        menu:
+            "TBA. Seguir adelante por el desierto.":
+                jump go_RutaDesierto4
+            "TBA. Explorar la zona de activos rebeldes.":
+                jump encontrasteActivosRebeldes
+
+    elif visitasteCamino4 == 1 and activosRebeldes == 0 and bandidoCapturado > 0:
+        "TBA. No es la 1ª vez que pasas por aquí, pero el mensaje es similar. Bandido ya no está suelto."
+        "TBA. Siguen los activos rebeldes, puedes hacerlo más interesante de visitar."
+        menu:
+            "TBA. Seguir adelante por el desierto.":
+                jump go_RutaDesierto4
+            "TBA. Explorar la zona de activos rebeldes.":
+                jump encontrasteActivosRebeldes
+
+    elif visitasteCamino4 == 1 and activosRebeldes == 1 and bandidoCapturado == 0:
+        "TBA. Te insiste en el camino por el que fue el Bandido; hay que perseguirle."
+        "TBA. Te menciona de pasada los activos rebeldes; pero no hay que entrar."
+
+    elif visitasteCamino4 == 1 and activosRebeldes == 1 and bandidoCapturado == 1:
+        "TBA. Te menciona de pasada los activos rebeldes; y que el bandido siguió adelante pero le pillaste, no es un problema ya."
+
+    elif visitasteCamino4 == 1 and activosRebeldes == 2 and bandidoCapturado == 0:
+        "TBA. Te insiste en el camino por el que fue el Bandido; hay que perseguirle."
+        "TBA. Te menciona de pasada los activos rebeldes. MENSAJE DIFERENTE A ANTES; pero no hay que entrar."
+
+    elif visitasteCamino4 == 1 and activosRebeldes == 2 and bandidoCapturado == 1:
+        "TBA. Te menciona de pasada los activos rebeldes; y que el bandido siguió adelante pero no es un problema ya."
+        "TBA. MENSAJE DIFERENTE A ANTES."
+
+    jump go_RutaDesierto4
+
+    jump go_RutaDesierto4
+
+label RutaDesierto5:
+
+    scene bg ruta desierto 5
+
+    if visitasteCamino5 == 0:
+        "TBA. Encontrarte al Bandido. Diálogo directo al entrar."
+        "TBA. Árbol pero, o vences al Bandido, o mueres."
+        menu:
+            "TBA. Vencer al Bandido.":
+                "Capturaste al Bandido."
+                $ visitasteCamino5 = 1
+                $ bandidoCapturado  = 1
+            "TBA. Ser derrotado.":
+                "Has sido derrotado y mueres."
+                return
+        pass
+    else:
+        "TBA. Aquí puedes pasear pero no hay nada que ver."
+
+    jump go_RutaDesierto5
+
+label Granjas:
+
+    scene bg granjas
+    show granjero
+    show granjero2 at left
+    show granjero3 at right
+
+    "TBA. granjas. HAY GRANJEROS GENÉRICOS."
+    menu:
+        "TBA ¿Quieres hablar con granjeros genéricos?"
+        "Hablaré con ellos.":
+            jump hablarGranjero
+        "No hablaré con ellos.":
+            pass
+
+    jump go_Granjas
+
+label GranjaDarklighter:
+
+    scene bg granja darklighter
+    if hablarDarklighter == 0:
+        show darklighter
+
+    "TBA. granja darklighter"
+
+    if hablarDarklighter == 0:
+        "TBA Aquí está Darklighter."
+        menu:
+            "TBA ¿Quieres hablar con Darklighter?"
+            "Hablar con Darklighter.":
+                jump hablarDarklighter
+            "No hablar con Darklighter.":
+                pass
+
+    jump go_GranjaDarklighter
+
+label GranjaLoquoy:
+
+    scene bg granja loquoy
+
+    if hablarLoquoy == 0:
+        show Loquoy at left
+    if questReclutarPiloto < 2:
+        show Jent
+
+    "TBA. granja loquoy."
+    
+    if primeraVezEnGranjaLoquoy == 0:
+        jent "Hola, [playerName]. Ésta es mi madre, Lorna."
+        $ primeraVezEnGranjaLoquoy = 1
+
+    if hablarLoquoy == 0 and questReclutarPiloto < 2:
+        menu:
+            "¿Quieres hablar con alguno de ellos?"
+            "Con Jent.":
+                jump hablarJentGranja
+            "Con Lorna.":
+                jump hablarLoquoy
+            "Con ninguno.":
+                pass
+    elif hablarLoquoy > 0 and questReclutarPiloto < 2:
+        menu:
+            "¿Quieres hablar con Jent?"
+            "Veeenga.":
+                jump hablarJentGranja
+            "No.":
+                pass        
+
+    jump go_GranjaLoquoy

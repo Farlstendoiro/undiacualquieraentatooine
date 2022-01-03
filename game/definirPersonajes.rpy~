@@ -1,0 +1,51 @@
+﻿label definePersonajes:
+
+# Ejemplo: define s = Character("sylvie", color="#c8c8ff", image="sylvie")
+
+# Este eres tu para los dialogos: you 'Hola, soy (corchetes)PlayerName(corchetes)'
+    define you = DynamicCharacter("PlayerName", color="#c8ffaa")
+
+    define jako = Character("J4-KO", color="#c8ffc8", image="TBA")
+    define mensajero = Character("TBA", color="#c8ffc8", image="TBA")
+
+    define camarero = Character("TBA", color="#c8ffc8", image="TBA")
+    define kabe = Character("TBA", color="#c8ffc8", image="TBA")
+    define labria = Character("TBA", color="#c8ffc8", image="TBA")
+
+    define bob = Character("TBA", color="#c8ffc8", image="TBA")
+    define tuskens = Character("Morador de las arenas", color="#c8ffc8", image="TBA")
+
+    define wassak = Character("Wassak", color="#c8ffc8", image="TBA")
+    # LA MUCHACHA ES JENT ANTES DE QUE SEPAS SU NOMBRE. MISMO CÓDIGO DE COLOR
+    define muchacha = Character("muchacha", color="#c8ffc8", image="TBA")
+    define jent = Character("Jent", color="#c8ffc8", image="TBA")
+    define graf = Character("TBA", color="#c8ffc8", image="TBA")
+
+    define funcionario = Character("TBA", color="#c8ffc8", image="TBA")
+    define Harburik = Character("Harburik", color="#c8ffc8", image="TBA")
+    define trooper = Character("Soldado de asalto", color="#c8ffc8", image="TBA")
+
+    define cazador = Character("TBA", color="#c8ffc8", image="TBA")
+    define monje = Character("Monje B'omarr", color="#c8ffc8", image="TBA")
+    define monje2 = Character("Otro monje", color="#c8ffc8", image="TBA")
+    define bandido = Character("TBA", color="#c8ffc8", image="TBA")
+
+    define crimelord1 = Character("TBA", color="#c8ffc8", image="TBA")
+    define crimelord2 = Character("TBA", color="#c8ffc8", image="TBA")
+    define crimelord3 = Character("TBA", color="#c8ffc8", image="TBA")
+
+    define contrabandista = Character("TBA", color="#c8ffc8", image="TBA")
+    define copiloto = Character("TBA", color="#c8ffc8", image="TBA")
+
+    define granjero = Character("Granjero de humedad", color="#c8ffc8", image="TBA")
+    define darklighter = Character("Darklighter", color="#c8ffc8", image="TBA")
+    define loquoy = Character("TBA", color="#c8ffc8", image="TBA")
+
+    define weequays = Character("TBA", color="#c8ffc8", image="TBA")
+    define droideMalo = Character("TBA", color="#c8ffc8", image="TBA")
+
+    define thok = Character("TBA", color="#c8ffc8", image="TBA")
+    define boggs = Character("Wenny Boggs", color="#c8ffc8", image="TBA")
+    define ermitano = Character("TBA", color="#c8ffc8", image="TBA")
+
+    define clawdita = Character("Belia Darzu", color="#c8ffc8", image="TBA")

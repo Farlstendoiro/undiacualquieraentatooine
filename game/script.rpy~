@@ -1,0 +1,71 @@
+﻿# El juego comienza aquí.
+
+label start:
+
+# ESTO ES PARA ARRANCAR DONDE TE CONVENGA
+#    $ item1 = 0
+#    $ item2 = 0
+#    "Oscilador: [item1]. Estandarte: [item2]."
+#    jump hangar
+# BORRALO CUANDO TOQUE
+
+# Un menú en el que una opción aparece sólo si la variable item1 es 0
+#    $ item1 = 1
+#    tusken "bla bla!"
+#    menu:
+#        "Opción A":
+#            "Has dicho Opción A"
+#        "Opción B":
+#            "Has dicho Opción B"
+#        "Opción Si Item1 Es 0" if item1 == 0:
+#            "Has dicho Opción Sólo en Item1 es 0"
+
+# inicializar variables y personajes
+
+    # Aquí deberías declarar los personajes usados en el juego como en el ejemplo:
+    call defineVariables
+    call definePersonajes
+    
+    # Aquí lo complico: you para los diálogos: you "Hola, soy [playername]"
+    define you = DynamicCharacter("playername", color="#c8ffaa")
+    
+    # No sé si sigues necesitando una posición para volver...
+    default posicion = "hangar"
+    
+# opening del juego
+    
+    playerName "Por ejemplo, supe de una arqueóloga de Polis Massa que, hace veinte años, encontró pruebas de que el Imperio Infinito de los rakata había llegado a la Brecha de Kathol."
+    playerName "Después, ella tuvo problemas cuando intentó transportar sus descubrimientos y la acusaron de contrabando; y más problemas aún cuando la acusaron de falsificar sus evidencias. Escapó al sector Arkanis. {b}Este{/b} sector."
+    scene bg tienda
+    show jawa
+    "Hola."
+    
+    scene bg tienda
+    show jawa
+    "Hola otra vez."
+
+
+label porsiaca:
+    scene bg unused celda
+    with fade
+    show jako
+    jako "Has llegado al label porsiaca, que debería no ser usado nunca. Esto ha salido mal."
+
+label findejuego:
+
+    # Finaliza el juego:
+    
+    scene bg tu nave
+    
+    "TBA. Hablar con Belia Darzu en tu nave::"
+    "TBA. Al hablar con Belia:"
+    "TBA. conoceClawditaA = 1 -> El diario del Ermitaño te da importante información."
+    "TBA. conoceClawditaB = 1 -> El crimelord1 (ó el 3) te ha dicho que ha hablado con alien de gran poder, sospecha que sith"
+    "TBA. conoceClawditaC = 1 -> El contrabandista: (mención a que hablaste varias veces con su administrador zabrak mientras bebías /bebida ligera/). pero: Zabrak de constitución muy robusta; si no pide una bebida fuerte, es a los efectos agua en su sistema."
+    return
+   
+    scene bg findejuego
+    "TBA. Ya puedes ir al espacio exterior."
+    "TBA. Jolín, cómo está el tráfico..."
+
+    return

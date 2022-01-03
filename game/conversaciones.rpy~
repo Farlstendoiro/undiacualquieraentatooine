@@ -1,0 +1,1703 @@
+﻿label hablarJentEnLaCalle:
+    show jent
+    "Te aborda una muchacha con ***ropas raídas de granjero, pero que camina como alguien que intenta ser piloto. Hay docenas así en este planeta."
+    muchacha "Hola. Eres [playerName], ¿verdad? [tuEl] xenobiólog[tuO]."
+    muchacha "Por favor, escúchame."
+    playerName "No tengo tiempo. Tengo suficientes problemas y mucho que hacer."
+    muchacha "¡Oh, vamos! No llevará mucho."
+    muchacha "Estás estudiando las ratas womp, necesitas saber lo que tengo que contarte."
+    playerName "Ya veo: Eres otra nativa que quiere que le invite a unas copas a cambio de un rumor fantástico que nunca ha pasado."
+    playerName "Pues ni hablar. Ya tengo bastantes declaraciones de ese estilo."
+    muchacha "¿Qué? ¡No! No quiero que me invites a nada. Ni siquiera tengo edad para beber."
+    muchacha "Sólo quiero que oigas lo que me ha pasado no hace un mes, y si me das tu opinión como xenobiólogo, quizá yo lo pueda entender."
+    menu:
+        "Venga, cuéntame lo que sea y acabemos con esto.":
+            show jent smile
+            muchacha "Gracias, [playerName], no lo lamentarás."
+            playerName "Ya lo estoy haciendo."
+            jump hablarJentEnLaCalleDiscurso
+        "No, no quiero hablar contigo.":
+            muchacha "Oh, vamos, será sólo un momento."
+            playerName "Te pondrás así de pesada hasta que te escuche, ¿no?"
+            "show jent smile***"
+            muchacha "Ésa es mi idea."
+            playerName "(Suspiro) Bueno, adelante."
+            jump hablarJentEnLaCalleDiscurso
+
+hablarJentEnLaCalleDiscurso
+    jent "Me llamo Jent Loquoy. Mis pa's son Lorna y Burdo Loquoy, granjeros de humedad. Vivimos no muy lejos de aquí, visítanos cuando quieras, [playerName]."
+    playerName "Céntrate. ¿Qué pasó?"
+    jent "Ah, sí. Yo estaba pilotando mi saltador por el Desfiladero del Peñón Mellado***SI SE PARECE A JAG CRAG GORGE***, cerca del Palacio de Jabba, ¿lo conoces?"
+    playerName "POSIBLE RESPUESTA***"
+    jent "Suelo correr por allí cuando he terminado mis tareas. Lo he recorrido un gúgol de veces, me sé cada {i}revoqueco{/i}, y a veces disparo a las ratas womp mientras corro."
+    jent "Nunca choco en el Cañón, pero ese día caí en una emboscada y estrellé mi máquina."
+    jent "Apenas me dio tiempo a eyectar antes de que mi máquina se estrellara en la pared del cañón."
+    jent "Entonces pude ver que alguien había colgado un cable en el cañón y eso había cortado mi ala superior."
+    jent "Tuve {b}mucha{b} suerte porque aterricé en la parte superior del acantilado***, y entonces pude mirar abajo."
+    jent "En el vado había docenas de ratas womp, ¡cientos! Se movían como un ejército organizado."
+    jent "Había una o dos que sostenían piezas de metal como palos, ¡y eran enormes! Más grandes que un wookiee."
+    jent "Esas dos estaban como guiando a las demás para que trepasen y me atrapasen."
+    jent "Yo lancé mi bengala de rescate y ellas se dispersaron; todas, menos las jefas. Ésas seguían intentando escalar, y yo no conseguía zafarme de mi propio cinturón de seguridad."
+    jent "Si Pa no hubiese llegado entonces en su speeder a recogerme, yo no estaría aquí ahora. Esas dos ratas huyeron al verle."
+    "Jent deja de hablar y te mira, con cara de confusión."
+    jent "¿Eran ratas womp inteligentes, verdad? La gente dice que no existen, pero las he visto."
+    playerName "Háblame antes de tu saltador. ¿Qué modelo era?"
+    jent "Un T-16 Skyhopper de Incom, del '34. Speeder aéreo de alto rendimiento, de segunda mano y muy modificado."
+    playerName "¿Motores iónicos E-16/x y generadores repulsores DCJ-45?"
+    jent "No, el motor es un Shocsar de SoroSuub, una de las modificaciones."
+    jent "Pero alcanza los 1.200 clics por hora sin problemas."
+    playerName "¿Ibas a velocidad transónica cuando chocaste? Estabas a punto de romper la barrera del sonido en atmósfera, en tierra."
+    playerName "No es fácil controlar una máquina y a la vez fijarse en el entorno. Es por eso que el Imperio prohibió las carreras de vainas."
+    jent "¡Ja! El Imperio prohibe porque le gusta prohibir todo lo divertido. ¿Crees que no soy capaz de llevar un chisme así?"
+    jent "Hace un par de años, yo misma piloté una vaina restaurada en Boonta. Vale, se deshizo antes de acabar la carrera, pero puedo llevar esos chismes."
+    jent "Soy una gran piloto. Pregunta a mis amigos, Hawk y Wassak. Ellos te lo confirmarán."
+    jent "¿Tú me crees, verdad?"
+    playerName "No descarto nada a la ligera. En esta galaxia he visto cosas muy raras."
+    playerName "Desde los anzati hasta Waru... pasando por ese droide R5 con capacidades jedi..."
+    "show anzati at left; show r5d4 at right"
+    jent "Hay tauntauns con escamas, worrts espaciales y leviatanes sith. ¿Por qué dudar de una rata womp inteligente?"
+    playerName "Nunca se ha podido confirmar un avistamiento de rata womp inteligente. Ha habido durante siglos, pero son criptoxenozoología."
+    jent "Si consiguieses pruebas, serías, como, alguien importante en lo tuyo, ¿no?"
+    jent "No soy la única. Varios granjeros han sido emboscados por ratas womp. ¡Pregunta entre las granja!"
+    jent "Pásate también por la granja de mi familia. Tengo algo allí pruebas de lo que te he contado."
+    playerName "Sospecho que acabaré pasándome, sí..."
+    $ itemDeclaraJent = 1
+    $ preguntarWassakPorJent = 1
+    $ preguntarGrafPorJent = 1 
+    
+    jump go_CallePrincipal
+
+
+label hablarWassak:
+
+    playerName "¡M'um m'aloo, Wassak!"
+    wassak "¡Hola, [playerName]!"
+
+    menu:
+        "¿Puedes venderme un oscilador?" if primerWassak == 0:
+            playerName "¿Puedes venderme un oscilador de cristal?"
+            wassak "¿Un oscilador? Si necesitas uno, es que tu nave no puede despegar."
+            wassak "Tienes un problema grave. Lo resolveré, si {i}tú{/i} resuelves {i}mi{/i} problema grave."
+            playerName "Esto me da mala espina."
+            wassak "Los jawas estamos siendo acosados por los moradores de las arenas."
+            wassak "Nos han declarado la guerra, pero no podemos defendernos contra ellos. ¡Es un xenocidio!"
+            wassak "Ayúdanos, [playerName], tú eres nuestra única esperanza."
+            playerName "¿Quieres que detenga a una tribu de bandidos tusken?"
+            wassak "No es una tribu. ¡Son todos! No se había visto nada igual desde los tiempos de Gardulla la Hutt."
+            wassak "Sólo queremos vivir."
+            wassak "Consigue pruebas de que los ataques pararán, y te daré el oscilador."
+            playerName "¿Cómo hago para meterme en estos líos?"
+            $ primerWassak = 1
+        "¿Puedes venderme un arma?" if itemArmaJawa == 0:
+            playerName "¿Puedes venderme un arma?"
+            wassak "¿Keeza? ¡Shootogawa!"
+            playerName "Wassak, sé perfectamente que hablas Básico. No finjas ser un salvaje."
+            wassak "Hkeek nkulla... Por no dejarme jugar, te venderé la pistola por... 300."
+            "Si es una pistola bláster, es barata. Si es un arma jawa, es cara."
+            menu:
+                "¿Intentas estafarme? Ofrezco 200.":
+                    playerName "Estás intentando timarme. 200 son un precio justo."
+                    wassak "250, no puedo bajar."
+                    playerName "¿230?"
+                    wassak "Imposible."
+                    playerName "Venga, acepto."
+                "Acepto.":
+                    playerName "Es un precio razonable, pero aún creo que es un robo."
+            "Recibes arma jawa."
+            wassak "Aquí tienes el arma. Taa baa."
+            playerName "De nada."
+            $ itemArmaJawa = 1
+            $ dinero = 2
+        "¿Sabes si Jent es buena piloto?" if preguntarWassakPorJent == 1:
+            playerName "¿Qué sabes de Jent Loquoy? ¿Es buena piloto?"
+            wassak "¡De las mejores que he visto!"
+            wassak "Nunca me trae restos de speeders que haya estrellado; ni tampoco los encuentro tirados por el desierto."
+            wassak "Bueno, menos una vez con la vaina de carreras, pero esos componentes llevaban años hechos cisco."
+            wassak "Me paso el rato vendiéndole motores y otras piezas de vehículos, así que sé muy bien lo que pilota."
+            wassak "A veces incluso tengo que instalarle yo algunos componentes. Si consigue no matarse con eso, es que es buena."
+            wassak "Pero también es un pelín fantasmona. Ella se cree mejor de lo que realmente es. Quiere pilotar cazas espaciales."
+            $ preguntarWassakPorJent = 2
+        "Háblame de tu encuentro con las ratas womp." if conoceClawditaA == 0 and visteDeclaracionWassak == 1:
+            playerName "¿Podemos hablar de tu encuentro con ratas womp inteligentes?"
+            "Wassak se ajusta su hábito, se yergue en toda su altura (93 centímetros) y te mira fijamente."
+            wassak "Soy Wassak, del clan Nkik."
+            wassak "Paso mucho tiempo en el desierto, buscando tesoros. He visto muchas ratas womp. Tengo incluso..."
+            playerName "Esa parte ya la tengo grabada."
+            playerName "Devolviste el droide a las autoridades imperiales, ¿verdad?"
+            wassak "Sí, claro."
+            playerName "Esas piezas que tienes a la venta se parecen mucho al sensor de movimiento y a la antena de transmisión de un droide Arakyd."
+            wassak "¿A ver? Sí, son otro droide Arakyd comprado legalmente a un granjero hace muchas lunas. Un granjero..."
+            wassak "¿A ver? Sí, son otro droide Arakyd comprado legalmente a un granjero hace muchas lunas. Un granjero... muy viejo."
+            playerName "¿Y las autoridades imperiales no te pidieron tu permiso para disparar un bláster? ¿Me lo enseñarías?"
+            wassak "No tengo que enseñarte mi licencia de armas. Tú no eres un imperial."
+            playerName "Estás seguro de haber visto que esas ratas tenían dedos y pulgares."
+            wassak "Vi claramente a las dos que se acercaron a mí. Tenían una mirada de inteligencia. Las que intentaban llevarse el droide, no lo sé."
+            wassak "Si intentaban llevarse el droide, supongo que tendrían capacidad manipuladora."
+            wassak "Quizá las ratas inteligentes lideran clanes de ratas normales. Con los jawas también pasa."
+            playerName "¿El poder va a quienes tienen pulgares?"
+            wassak "El poder va a quienes tienen inteligencia, listill[tuO]."
+            if itemRataMuerta == 1 and ensenarRataWassak == 0:
+                playerName "Tu amiga Jent Loquoy habla de un encuentro similar con ratas womp inteligentes."
+                show ratamuerta at left
+                playerName "Me dio este cadáver de rata. Dice que es una de las ratas inteligentes que le atacaron."
+                playerName "Tiene zarpas normales. No puede mover dedos independientemente, y desde luego no tiene pulgares."
+                wassak "."
+                wassak ". ."
+                wassak ". . ."
+                wassak ". {p}. {p}. {p}¿Y?"
+                wassak "[playerName], Jent es un encanto para ser humana, no dudo de su palabra, pero a veces exagera sus relatos para impresionar."
+                wassak "Bueno, sí que dudo de su palabra."
+                wassak "Ella puede haberse equivocado. Quizá ella se imaginó que las ratas de su historia eran inteligentes."
+                wassak "Yo sólo puedo hablar de {i}mi{/i} historia."
+                $ ensenarRataWassak = 1
+        "El diario del ermitaño demuestra que tu historia es falsa." if conoceClawditaA == 1 and visteDeclaracionWassak == 1:
+            playerName "Tengo algo que enseñarte."
+            show ermitano amarillo at left
+            "Wassak escucha con atención el diario del ermitaño."
+            playerName "Las ratas que te atacaron estaban amaestradas y controladas por este tipo."
+            playerName "Cualquiera con experiencia en trato de animales puede conseguir algo así;"
+            playerName "y sospecho que este viejo tenía capacidades de la Fuerza que le ayudaban."
+            wassak "Vaya, qué se le va a hacer."
+            playerName "La rata que silba es un cabo suelto por el momento. Quizá un droide."
+            wassak "Supongo que me engañaron. Te pagaré las bebidas a las que me invitaste a cambio de mi declaración."
+            playerName "¿No te preocupa esto?"
+            "Wassak se encoge de hombros."
+            wassak "No especialmente. No hay dinero ni tecnología por medio."
+            # NO ACTUALIZA NADA, TE PUEDE VOLVER A SALIR
+        "¿Me prestas un ordenador de navegación?" if ordenadorNav == 1:
+            wassak "¡Pero si no tienes una nave!"
+            playerName "Tengo unas rutas que quiero investigar."
+            wassak "Eso suena muy aburrido."
+            wassak "Ah, qué más da. Al fondo lo tienes. Cuidado con el galoomp."
+            playerName "¿Es tu mascota o tu cena?"
+            wassak "¿No puede ser las dos cosas?"
+            "Decides ir al ordenador de navegación y no debatir más con Wassak."
+            $ ordenadorNav = 2
+            jump usandoOrdenadorNav
+        "Quiero volver a usar el ordenador de navegación, por favor." if ordenadorNav == 2:
+            wassak "Al fondo, donde siempre."
+            wassak "Los [tuEspecie]s sois gente muy rara."
+            jump usandoOrdenadorNav
+        "¿Qué tal está tu comunidad jawa?":
+            if itemEstandarte == 0:
+                wassak "Los moradores de las arenas atacan sin parar."
+                wassak "Varios clanes han sido diezmados. Los reptadores han sufrido daños."
+                wassak "Necesitamos una solución."
+            elif itemEstandarte > 0:
+                wassak "Es estupendo. Los bandidos tusken han dejado de atacarnos, ¡y hasta quieren comerciar!"
+                wassak "Los tusken quieren armas avanzadas para alejar a ***CRIMELORD de sus territorios."
+                wassak "El clan Kkuui y el cacique GRu'uu'h'rRr se reunirán en busca de formas de colaborar."
+                wassak "Algunos jawas hablan del comienzo de una nueva era... y después intentan venderte algo."
+        "Tengo el estandarte tusken, dame el oscilador" if itemEstandarte == 1 and primerWassak == 1:
+            playerName "¡Wassak! ¡Tengo el estandarte de los tusken!"
+            playerName "Es la prueba de que ya no irán a la guerra contra vosotros."
+            wassak "¿Contra nosotros? ¿Van a ir a la guerra contra alguien?"
+            playerName "Alguien ha buscado problemas con los tusken, y los ha encontrado."
+            playerName "Esto ya no es vuestro problema ni el mío."
+            wassak "Me alegra oír eso, [playerName]."
+            wassak "Con mucho gusto te doy el oscilador prometido."
+            $ itemEstandarte = 2
+            $ itemOscilador = 1
+            call ComprobarLosTres
+        "Eso es todo por ahora.":
+            playerName "Hasta otra."
+            wassak "¡Ubanya!"
+            jump go_TiendaJawa   
+
+    jump hablarWassak
+
+
+label usandoOrdenadorNav:
+    "***RECUERDA: QUE SE VEA LA RUTA COMO FONDO
+    # "itemRuta: %(itemRutaMelocoton)d. itemRutaReal: %(itemRutaRealMelocoton)d.***"
+    # Tienes la ruta falsa
+    if itemRutaMelocoton == 1 and itemRutaRealMelocoton == 0:
+        playername "Vamos a ver en qué sistemas has estado. Quizá descubra algo útil comparando tus manifiestos y tus rutas."
+        "show tecnología/REUSSI at left with dissolve***"
+        playername "Sector Portmoak, planeta Reuss VIII. Muy desagradable. Es una pesadilla sobreindustrializada. Según esto, el {i}Tormenta de Melocotón{/i} compró tecnología media allí."
+        playername "Es sospechoso que TurJinda no llenase toda su bodega. Quizá simplemente metió algo de contrabando en el resto del espacio. No es para echarse las manos*** a la cabeza."
+        playername "Desde ahí, cogió la Carrera de Especia de Llanic en dirección al sector Katharkk."
+        "show PIRATA at left with dissolve (AND HIDE)***"
+        playername "Menciona un incidente con piratas en el sistema Socorro. Eso es predecible. Yo mism[tuO] nunca he podido pasar por Socorro sin toparme con piratas."
+        playername "Sufrió daños menores en el casco por... baterías turboláser. A mí siempre me atacan con cañones iónicos, para intentar inmovilizarme sin dañar la nave."
+        "show ESPECIA o IMPERIAL o algo at left with dissolve (AND HIDE)***"
+        playername "Llegan a Llanic, el puerto ilegal de especia, e intercambiador con la Ruta de Comercio Triellus."
+        playername "Últimamente Llanic ha sido un territorio candente. El Imperio quería afianzar su poder allí, pero hay demasiado comercio ilegal. "
+        playername "Allí vende la tecnología media y compran especia por cauces legales, pero no a los hutts. Supongo que puede ser cierto."
+        "show KERKOIDEN at left with dissolve (and hide)***"
+        playername "Desde ahí vuela a Arkanis, pasa a la Carrera Coreliana y para en Christophsis para comprar...{p}¿droides?."
+        playername "Eso no tiene sentido. Christophsis no es un gran fabricante de droides. Sólo exporta minerales, productos industriales y arte. ¡Nadie llena su bodega de droides en Christophsis!"
+        playername "No hay más detalles. Ni siquiera veo una lista de modelos o fabricantes de su cargamento. Hay facturas con fecha y sello de Christophsis, pero nada más."
+        playername "Este dato es extraño: El {i}Tormenta de Melocotón{/i} pasó doce días en dique seco en Christophsis sin motivo aparente. No estaba de reparaciones, la tripulación no estaba de vacaciones..."
+        "show ALGO TATOOINE at left with dissolve***"
+        playername "Desde Christophsis vuelve a la ruta Triellus y acaba en Tatooine. Todo esto parece tener sentido.{p}Lo que significa que algo va mal."
+        "HIDE TATTOINE***"
+        playername "En una pantalla, esto es técnicamente viable, pero es poco práctico. Una nave así perdería dinero sólo en un transporte tan ineficiente."
+        playername "Todo está decidido de la manera más aséptica, para que parezca normal... {i}Extraordinariamente{/i} normal. Incluso los piratas socorranos."
+        playername "Estoy segur[tuO] de que, si yo contactase con los puertos de Christophsis, Llanic y Reuss VIII, no tendrían registros de esta nave ni de ninguna parecida."
+        playername "Alguien se está tomando muchas molestias para que no se descubra algo."
+        $ itemRutaMelocoton = 2
+        jump go_TiendaJawa
+    # Tienes la Ruta Falsa y ya la has mirado
+    elif itemRutaMelocoton == 2 and itemRutaRealMelocoton == 0:
+        playername "Esto no me dará más información. Ya sé lo que necesito."
+        "shoW REUSSI/TECNOLOGIA AT LEFT, ESPECIA/IMPERIAL CENTRO Y KERKOIDEN AT RIGHT***"
+        playername "Supuestamente, TurJinda compró tecnología media en Reuss VIII y después especia en Llanic y, de algún modo, droides en un mundo como Christophsis que no fabrica droides."
+        playername "Ataque pirata en Socorro con turbolásers... Todo es posible, pero son muchas improbabilidades seguidas."
+        playername "Todo parece normal, y por eso apesta a falso."
+        "HIDE LA PEÑA***"
+        jump go_TiendaJawa
+    # Tienes la Ruta Buena y la Falsa. No has mirado ninguna - o sólo tienes la Buena
+    elif (itemRutaMelocoton == 1 or itemRutaMelocoton == 0) and itemRutaRealMelocoton == 1:
+        "show tecnologia/svivren at left with dissolve***"
+        playerName "Echemos un vistazo. Reparaciones masivas en Svivren que llevaron semanas. Es el mayor tiempo en dique seco recientemente. Empezaremos por ahí.
+        playerName "En Svivren compraron un cargamento de media tecnología, y de ahí fueron a Ryloth a venderlo, con escala técnica en Qiaxx."
+        playerName "De momento tiene sentido: Svivren exporta tecnología, Ryloth la importa. Se saca beneficio en la ruta."
+        "show especia/twilek at left with dissolve (y HIDE svivren)***"
+        playerName "¿Qué compraste en Ryloth, pillín? ¿Esclavos o droga? Ryloth no exporta mucho más... {p=10} Especia bruta para fabricar medicina. ¿En serio?"
+        playerName "Desde Ryloth coges una ruta no registrada... ¿hasta el sector Ferra? Hypori. ¿Qué hay en Hypori?"
+        "show droide at left with dissolve***"
+        playerName "Recoges droides... Espera, ¿no llenaste la bodega sólo con especia en Ryloth? Si alguien necesita droides y especia, ¿por qué no encargó dos naves? Recibiría dos cargamentos llenos... Esto no es eficiente."
+        playerName "...a menos que la discrecion sea muy importante. ¿Quién está interesado en tanta discreción?"
+        "show kaminoano at left with dissolve***"
+        playerName "Has llegado al... Espacio Salvaje. Oh, vaya, el Planeta de las Tormentas. ¡Kamino! ¡El mundo de los clonadores!"
+        "show ororo at left with dissolve***"
+        playerName "Un momento, espera. Transportes Ororo se enfrentó al Príncipe Xizor, de Sol Negro; Xizor mató a sus dueños... ¿y quizá los reemplazó por directivos afines a él?"
+        playerName "Svivren y Qiaxx están asociados a Sol Negro; he oído que el Príncipe Dequc los controla, y que intentó escindirse para crear su propia organización, Nébula Negra."
+        playerName "Ryloth, Hypori e incluso Kamino formaban parte de otro grupo criminal, el Consorcio Zann, pero se dice que Sol Negro también los ha absorbido."
+        playerName "Sin embargo, los hutts y los señores de la guerra no van a permitir semejante cosa. Van a pelear por esos sistemas."
+        "show blacksun at left with dissolve***"
+        playerName "Conclusión: El poder de Crimelord2*** viene de que Sol Negro controla estos sistemas. Pero su control es inestable. Sus mundos cambiarán de manos en un mes."
+        playerName "Crimelord2*** y Transportes Ororo tienen sobornado al Imperio en este sector, Arkanis, para poder volar por aquí. Pero si el Imperio pierde el sector, que es probable, Ororo está perdido."
+        playerName "Este tío***, ***Crimelord2, es un Sol Negro, y está perdiendo puntos rápidamente."
+        playerName "Tengo suficiente información para que ***Crimelord2 se retire de la competición.
+        hide blacksun
+        $ informacionImplicaCrimelord2 = 1
+        $ itemRutaRealMelocoton = 2
+        $ ordenadorNav = 3
+        scene bg TiendaJawa
+        show wassak
+        jump go_TiendaJawa
+    # Tienes la Ruta Buena y la Falsa. Miraste antes la falsa
+    elif itemRutaMelocoton == 2 and itemRutaRealMelocoton == 1:
+        # La RUTA BUENA es: Svivren (O19) > Qiaxx (P18) > Ryloth (R17) > Hypori (S16) > Kamino (S15) > Tatooine
+        playerName "De un golpe de vista, esto no tiene nada que ver con lo que TurJinda me dio antes."
+        show tecnologia at left with dissolve***
+        playerName "Echemos un vistazo. Reparaciones masivas en Svivren que llevaron semanas. Es el mayor tiempo en dique seco recientemente. Empezaremos por ahí."
+        playerName "En Svivren compraron un cargamento de media tecnología, y de ahí fueron a Ryloth a venderlo, con escala técnica en Qiaxx."
+        playerName "De momento tiene sentido: Svivren exporta tecnología, Ryloth la importa. Se saca beneficio en la ruta. Parece algo normal."
+        playerName "¿Qué compraste en Ryloth, pillín? ¿Esclavos o droga? Ryloth no exporta mucho más... {p=10} Especia bruta para fabricar medicina. ¿En serio?"
+        show especia at left with dissolve***
+        playerName "De momento casi todo parece legal. ¿Por qué me ocultaste*** la ruta antes, TurJinda? ¿Qué tienes que ocultar?"
+        playerName "Desde Ryloth coges una ruta no registrada... ¿hasta el sector Ferra? Hypori. ¿Qué hay en Hypori?"
+        show droide at left with dissolve***
+        playerName "Recoges droides... Espera, ¿no llenaste la bodega sólo con especia en Ryloth? Si alguien necesita droides y especia, ¿por qué no encargó dos naves? Recibiría dos cargamentos llenos... Esto no es eficiente."
+        playerName "...a menos que la discrecion sea muy importante. ¿Quién está interesado en tanta discreción?"
+        show kaminoano at left with dissolve***
+        playerName "Has llegado al... Espacio Salvaje. Oh, vaya, el Planeta de las Tormentas. ¡Kamino! ¡El mundo de los clonadores!"
+        show ororo at left with dissolve***
+        playerName "Un momento, espera. Transportes Ororo se enfrentó al Príncipe Xizor, de Sol Negro; Xizor mató a sus dueños... ¿y quizá los reemplazó por directivos afines a él?"
+        playerName "Svivren y Qiaxx están asociados a Sol Negro; he oído que el Príncipe Dequc los controla, y que intentó escindirse para crear su propia organización, Nébula Negra."
+        playerName "Ryloth, Hypori e incluso Kamino formaban parte de otro grupo criminal, el Consorcio Zann, pero se dice que Sol Negro también los ha absorbido."
+        playerName "Sin embargo, los hutts y los señores de la guerra no van a permitir semejante cosa. Van a pelear por esos sistemas."
+        show blacksun at left with dissolve***
+        playerName "Conclusión: El poder de Crimelord2*** viene de que Sol Negro controla estos sistemas. Pero ese control es inestable. Esos mundos cambiarán de manos pronto."
+        playerName "Crimelord2*** y Transportes Ororo tienen sobornado al Imperio en este sector, Arkanis, para poder volar por aquí. Pero si el Imperio pierde el sector, que es probable, Ororo está perdido."
+        playerName "Este tío***, ***Crimelord2, es un Sol Negro, y está perdiendo puntos rápidamente."
+        playerName "Tengo suficiente información para que ***Crimelord2 se retire de la competición.
+        $ informacionImplicaCrimelord2 = 1
+        $ itemRutaRealMelocoton = 2
+        $ ordenadorNav = 3
+        scene bg TiendaJawa
+        show wassak
+        jump go_TiendaJawa
+    # Ya tienes toda la información que necesitas
+    elif itemRutaRealMelocoton == 2:
+        playerName "Ya he averiguado lo que necesitaba saber. No necesito mirar nada más aquí."
+        jump go_TiendaJawa
+
+    "Bueno, ya he mirado el ordenador de navegación."
+    jump go_TiendaJawa
+
+label hablarGraf:
+    if saludarGraf == 0:
+        playerName "¿Eres Hawk Hyperhalo? ¿La rebanadora?"
+        graf "¿Quién quiere saberlo?"
+        playerName "Me llamo [playerName]."
+        graf "Ah, [tuEl] xenobiólog[tuO]. Sí, es correcto."
+        graf "Mis sensores te identificaron al entrar. La pregunta era para ver si intentabas engañarme o eras de fiar."
+        playerName "¿En serio? Pues los sensores parecen apagados."
+        graf "Los he modificado para que no se detecte que están encendidos."
+        playerName "Pues no se nota nada. Yo diría que están todos rotos y estropeados."
+        graf "Eh... ¿Qué puedo hacer por ti, [playerName]"
+    else:
+        graf "Hola, [playerName]. ¿Qué te trae por aquí?"
+
+    menu:
+        "Necesito un permiso de despegue." if preguntarPermisoEnCantina == 2 and itemWantedPoster == 0:
+            playerName "Necesito un permiso de despegue para mi nave, el {i}[tuNave]{/i}."
+            graf "¿No conseguiste uno de atraque y despegue?"
+            playerName "Parece que los imperiales lo han perdido."
+            graf "¿Y qué te hace pensar que puedo ayudarte?"
+            playerName "***Kabe, de la cantina ***Disher's, te ha recomendado."
+            playerName "Dice que puedes entrar en sus ordenadores, encontrar el archivo y hasta homologarlo."
+            graf "Sí, yo podría hacer el trabajo que sus funcionarios no hacen; pero que cobran por hacer."
+            graf "Me puedo hacer pasar por un Moff o algo. Si alguien investiga, el Moff dirá que hizo ese trámite porque, si no, reconocería ineficiencia en su propia gente."
+            graf "(Sigh). Puedo resolver tu problema, si tú haces algo por mí."
+            show bandido amarillo at left
+            graf "Éste es Guso Gaethgan. Es un bandido, perseguido por detonación plutónica, asesinato con fusión y caos molecular."
+            graf "Quiero que le captures y le entregues a las autoridades."
+            playerName "¿Qué?"
+            menu:
+                "Tú necesitas más bien un cazarrecompensas.":
+                    playerName "Tú no necesitas un xenobiólogo, ¡tú necesitas un cazarrecompensas!"
+                    graf "No. {i}Tú{/i} necesitas un cazarrecompensas."
+                "¿No prefieres algo de dinero?":
+                    playerName "¿No prefieres que te pague en efectivo?":
+                    graf "Esto no se resuelve con dinero."
+                "¿Yo te doy dinero y tú contratas un cazarrecompensas?":
+                    playerName "¿Y si te doy dinero y tú contratas un cazarrecompensas?"
+                    graf "No puedo buscar un cazarrecompensas directamente. Mi cabeza tiene un precio. Debería saltar del sector lo antes posible."
+            playerName "¿Qué problema tienes con este Guso Gaethgan?"
+            graf "Es personal.{p}Gaethgan ha ido a por... mis seres queridos."
+            playerName "¿Buscas venganza?"
+            graf "Si le paras a tiempo, no."
+            playerName "Oh, bueno, veré lo que puedo hacer.***"
+            $ itemWantedPoster = 1
+            $ preguntarKabePorCazador = 1
+        "¿Podrías retirar una investigación abierta sobre mi nave?" if preguntarGrafInvestigacion == 0:
+            playerName "Hay una acusación de contrabando sobre mi nave."
+            graf "Eso es un asco. Hasta que la sobresean o resuelvan, no te dejarán salir del sistema."
+            playerName "¿Tú podrías hacer que... desapareciese?"
+            graf "(gasp)"
+            graf "No. No. Ni hablar."
+            graf "Eso es entrar en bases de datos imperiales bien protegidas. Si me pillan, me veo en Kessel o algo peor."
+            menu:
+                "Seguro que eres lo bastante buena, y será un logro memorable.":
+                    playerName "Vamos, eres la gran rebanadora, la alumna aventajada de Shenir Rix."
+                    graf "Nunca vi a Rix, sólo chateamos por la red. Tal vez ella no era Rix."
+                    playerName "Si lo consigues, te forjarás una reputación."
+                    graf "Sí, entre los Rangers y Seguridad Imperial. Ni hablar."
+                "Pídeme a cambio lo que quieras.":
+                    playerName "Ponle precio. Conseguiré lo que necesites."
+                    graf "No hay recompensa que compense esto."
+                    graf "No podría gastármela en el Averno."
+                    playerName "¿El Averno? Hacía mucho que no oía esa palabra."
+            playerName "Bueno, si estás segura..."
+            graf "Mi vida ya es bastante complicada."
+            $ preguntarGrafInvestigacion = 1
+        "¿Es Jent Loquoy una buena piloto?" if preguntarGrafPorJent == 1:
+            playerName "Eres Hawk, la amiga de Jent Loquoy. Me dijo que te preguntase si ella es buena piloto."
+            graf "¿Jent? Ya te digo. He controlado su carrera."
+            graf "Ella se presentó a las pruebas de la Academia Imperial para ser piloto de caza, en {i}todos{/i} los cazas."
+            graf "Siempre superó la nota de corte para entrar. Pero no llegó al nivel excelente, por muy poco."
+            graf "Si hubiese sacado excelencia, el Imperio habría pagado sus estudios con una beca."
+            playerName "¿Y tú no tuviste nada que ver con sus notas?"
+            graf "¡Ja! Ella me mataría si me atreviese a rebanar sus resultados."
+            graf "Jent llegará a ser piloto, sólo espero que civil. Ojalá ella no fuese una {i}fangirl{/i} del Imperio."
+            playerName "¿Cuál es el problema?"
+            graf "¿Crees que el Imperio aprecia a los rebanadores?"
+            $ preguntarGrafPorJent = 2
+        "¿Me prestas un ordenador de navegación?" if ordenadorNav == 1:
+            graf "¿Qué?"
+            graf "No tengo un naviordenador. ¿Crees que esto es una nave espacial?"
+            # No cambias variables, así que esto puede volver a salir
+        "He capturado al bandido Guso Gaethgan." if bandidoCapturado == 1 and itemPermisoDespegue == 0:
+            playerName "He capturado a Guso Gaethgan."
+            graf "Lo he visto en la red. Buen trabajo, [playerName]."
+            graf "4-LOM ha cobrado la recompensa y se atribuye el mérito, pero me vale."
+            if activosRebeldes == 1:
+                playerName "También sé porqué le buscabas."
+                # START CACHO REPETIDO, CUIDADO SI HACES CAMBIOS
+                playerName "He encontrado las naves rebeldes...".
+                playerName "Teniente Hyanon Hyperhalo, ¿Fuerzas Especiales de la Alianza?"
+                "Hyperhalo suda y desvía la mirada."
+                graf "En realidad, trabajo para la Red de Espías Bothan."
+                graf "Y no sé si soy teniente o qué. Todo el resto de la unidad ha muerto."
+                playerName "¿Fue Gaethgan?"
+                graf "No, pero corría el riesgo de que él descubriese el hangar secreto."
+                graf "¡Yo no podía permitir que un bandido se hiciese con esos cazas!"
+                playerName "Con uno de ésos, podrías salir del planeta sin problemas."
+                playerName "Esclavizas los motores de los otros cazas, y te los llevas."
+                playerName "Desde lo de Endor, hay una docena de mundos que son refugio seguro para ti."
+                graf "¡¡¡Pero yo no sé pilotar un caza!!!"
+                graf "¿Supongo que tú no podrías hacerlo por mí?"
+                playerName "¿Qué? Yo ni siquiera sé pilotar. Necesito a mi droide para llevar la nave."
+                playerName "Además, no vamos en la misma dirección. Tengo mi propia misión que cumplir."
+                graf "Voy a arrepentirme de esto, pero:"
+                graf "¿Podrías conseguirme un piloto para esto? Uno de fiar, no un canalla como TurJinda."
+                graf "No sé si me queda algo que ofrecerte a cambio."
+                menu:
+                    "Acepto, haré una buena obra por ti.":
+                        graf "Gracias. No lo lamentarás."
+                        graf "Tráeme un piloto y yo le daré los detalles."
+                        $ questReclutarPiloto = 1
+                    "No, gracias; tengo mucho que hacer.":
+                        $ questReclutarPiloto = 2
+                        pass
+                # FIN CACHO REPETIDO
+                graf "En todo caso, teníamos un trato y tú has cumplido."
+                $ activosRebeldes = 2
+            else:
+                playerName "¿Entonces cumplirás tu parte del trato?"
+                graf "Por supuesto."
+            "Halohunter se sienta ante un ordenador y empieza a teclear furiosamente."
+            "La pantalla se llena de caracteres y cambia demasiado rápido para que puedas seguir sus acciones."
+            "De vez en cuando hay algún mensaje en letras rojas grandes, pero Halohunter lo ignora."
+            "Ella ha terminado en un cuarto de kilosegundo. Se gira y te mira sonriendo."
+            graf "Un permiso de despegue para mi amig[tuO] [playerName], firmado por el Moff ***."
+            "Recibes permiso de despegue.***"
+            graf "¿Puedo hacer algo más por ti?"
+            $ bandidoCapturado = 2            
+            $ itemPermisoDespegue = 1
+            call ComprobarLosTres
+        "Ahora sé porqué me enviaste: He encontrado las naves rebeldes." if activosRebeldes == 1 and questReclutarPiloto == 0:
+            playerName "Ahora sé porqué me enviaste a por Guso Gaethgan."
+            # START CACHO REPETIDO, CUIDADO SI HACES CAMBIOS
+            playerName "He encontrado las naves rebeldes...".
+            playerName "Teniente Hyanon Hyperhalo, ¿Fuerzas Especiales de la Alianza?"
+            "Hyperhalo suda y desvía la mirada."
+            graf "En realidad, trabajo para la Red de Espías Bothan."
+            graf "Y no sé si soy teniente o qué. Todo el resto de la unidad ha muerto."
+            playerName "¿Fue Gaethgan?"
+            graf "No, pero corría el riesgo de que él descubriese el hangar secreto."
+            graf "¡Yo no podía permitir que un bandido se hiciese con esos cazas!"
+            playerName "Con uno de ésos, podrías salir del planeta sin problemas."
+            playerName "Esclavizas los motores de los otros cazas, y te los llevas."
+            playerName "Desde lo de Endor, hay una docena de mundos que son refugio seguro para ti."
+            graf "¡¡¡Pero yo no sé pilotar un caza!!!"
+            graf "¿Supongo que tú no podrías hacerlo por mí?"
+            playerName "¿Qué? Yo ni siquiera sé pilotar. Necesito a mi droide para llevar la nave."
+            playerName "Además, no vamos en la misma dirección. Tengo mi propia misión que cumplir.
+            graf "Voy a arrepentirme de esto, pero:"
+            graf "¿Podrías conseguirme un piloto para esto? Uno de fiar, no un canalla como TurJinda."
+            graf "No sé si me queda algo que ofrecerte a cambio."
+            menu:
+                "Acepto, haré una buena obra por ti.":
+                    graf "Gracias. No lo lamentarás."
+                    graf "Tráeme un piloto y yo le daré los detalles."
+                    $ questReclutarPiloto = 1
+                "No, gracias; tengo mucho que hacer.":
+                    $ questReclutarPiloto = 2
+                    pass
+            # END REPETIDO
+            $ activosRebeldes = 2
+            $ questReclutarPiloto = 1
+        "¿Qué hay entre Jent y tú?":
+            playerName "¿Qué hay entre Jent Loquoy y tú?"
+            graf "¿Jent? Eh - Somos amigas desde niñas. Crecimos juntas."
+            "Hyperhalo balbucea, desvía la mirada y tiembla visiblemente."
+            graf "Ya sabes, alguien de tu misma edad y especie ***VERIFICAR*** en una colonia pequeña, haces migas por necesidad."
+        "Hasta luego.":
+            playerName "Hasta luego, Hyperhalo."
+            graf "Nos vemos, [playerName]."
+            jump go_CasaGraf
+    jump hablarGraf
+
+
+label hablarJentGranja:
+
+    menu:
+        "Enséñame las pruebas de tu aventura." if itemRataMuerta == 0 and conoceClawditaA == 0:
+            jent "Sí, claro. Como recordarás, las ratas womp me tendieron una trampa y estrellaron mi T-16."
+            jent "Las ratas womp no son lo bastante inteligentes para eso, ni para perseguirme en un grupo tan grande."
+            playerName "Las ratas womp no van en grupos de más de quince."
+            jent "¿Lo ves? Pero éstas estaban juntas, y tenían líderes claros."
+            jent "Al día siguiente, volví por allí, esta vez con el speeder. Ya no tenía el T-16."
+            show jent sad
+            jent "Encontré una rata muerta justo en ese sitio. Creo que fue atropellada por las otras cuando huyeron."
+            jent "Piénsalo: Todo el grupo era... raro. Ratas inteligentes. Tenemos una rata muerta."
+            "***SHOW RATA MUERTA."
+            "Recibes rata womp muerta."
+            playerName "Esto es... Parece una rata womp normal."
+            jent "Tú eres una lumbrera. Estoy segura de que puedes hacerle una {i}atorsia{/i} y descubrir algo extraordinario en su cerebro."
+            playerName "¿Una autopsia?"
+            playerName "Así, a simple vista, sospecho que no murió pisoteada por ratas sino por un vehículo espacial.***EXPANDIR"
+            if visteDeclaracionWassak == 1:
+                playerName "¿Sabes? He hablado con Wassak, el jawa. Tú me dijiste que erais amigos."
+                jent "Sí."
+                playerName "Él ha tenido otro encuentro con ratas inteligentes y vio que tenían pulgares."
+                playerName "Si tus ratas inteligentes sostenían palos, también deberían tenerlos, para poder manipular herramientas."
+                jent "Tiene sentido, ¿no?"
+                playerName "Esta rata tiene zarpas normales. Es un plantígrado. No tiene dedos que pueda mover independientemente."
+                jent "Puede ser..."
+                jent "Puede ser... ¿que dos ratas inteligentes liderasen una manada de ratas normales?"
+                playerName "¿Y ésta es una de las soldados, mientras las otras son reinas? Me parece pillado por los pelos."
+            playerName "Pero oye, me llevo la rata. Si descubro algo importante, me aseguraré de mencionar tu nombre."
+            $ itemRataMuerta = 1
+        "Háblame de ti como piloto.":
+            jent "Vaya. Gracias, me encanta hablar de eso y poca gente aquí me deja."
+            playerName "(Sospecho que se lo saben)."
+            jent "Llevo poniéndome a los mandos de un speeder desde antes de sostenerme en pie sola."
+            jent "He pilotado todo lo que he encontrado a mano, siempre puliendo mis capacidades."
+            jent "Ma' me compró el T-16 hace tres años, de segunda mano y me hizo prometer que no volaría sin supervisión en un año."
+            jent "Dediqué ese tiempo a mejorar la máquina con piezas compradas a los jawas. Aprendí un montón."
+            playerName "¿Qué vehículos sabes pilotar?"
+            jent "***AÑADIR; cazas, vaina, T-16. ala-X, Z-95, ghtroc, lanzadera de servicios 23K, cápsula hiperspacial, fragata de escolta, cañonera coreliana."
+            jent "Tengo 630 horas de vuelo, la mitad en simulador de caza. Quería entrar en la Academia Imperial."
+            jent "El año pasado superé la nota de corte para entrar, pero no para que me financiasen los estudios."
+            jent "Pretendía volver a intentarlo el año que viene, pero ahora ya no lo sé."
+            playerName "¿Qué ha pasado?"
+            jent "La batalla de Endor. El Imperio está {i}musido{/i} en el caos. Ni siquiera sé si seguirán con la Academia."
+            playerName "Precisamente ahora están bajando los requisitos de acceso porque necesitan muchos oficiales rápido."
+            jent "Ahora el Imperio va perdiendo. Yo preferiría ir a la Nueva Alianza Rebelde. Ésos siempre han ido de buenos."
+            playerName "La Nueva República."
+            jent "Pero para entrar en la Nueva Cosa Ésa sí que hay que tener contactos. Alguien que haya luchado contra el Imperio en la guerra."
+            jent "Yo ni siquiera conocí al hijo de Darklighter."
+            $ hablarJentImperio = 1
+        "Este diario explica lo de las ratas inteligentes" if conoceClawditaA == 1:
+            playerName "He encontrado este diario en el Mar de Dunas."
+            playerName "Parece bastante claro: Un ermitaño entrenó a varias ratas para hacer trucos y colaboró con alguien que podía simular una rata gigante."
+            playerName "Diría que te han engañado con lo de las ratas... o más bien que tú me intentas engañar a mí..."
+            playerName "...porque, según el ermitaño, las ratas te atraparon, y tu historia olvida sospechosamente esa parte."
+            jent "Ups."
+            jent "Esto no es lo que parece, [playerName]... Puedo explicarlo todo..."
+            playerName "Adelante. Te escucho."
+            show loquoy at left
+            loquoy "Sí, yo también estoy interesada."
+            jent "Oh, frek..."
+            jent "Nunca hubo un cable. Choqué yo sola, ¿vale? Iba demasiado rápido."
+            jent "El asiento eyectable cayó sobre el barranco; pero el cinturón se rompió y yo me caí al fondo."
+            jent "Entonces vi a la rata gigante, que llevaba un palo. Es extraño, porque no creí que hubiese ratas allí."
+            jent "Creí haber visto una persona mientras caía. Debió ser tu amigo del mensaje."
+            jent "La rata vino a por mí y me pilló. ¿Te imaginas lo que es ver algo así de feo, así de grande, y así de {b}cerca?{/b}"
+            jent "Empezaron a aparecer las otras ratas a mi alrededor. Pero quizá fuesen unas diez, no tantas como dije."
+            jent "El monstruo me echó su fétido aliento a la cara y me preguntó qué había visto yo. ¿Puedes creerlo? ¿Que una rata te pregunte algo así?"
+            jent "Le dije la verdad. Yo estaba demasiado asustada para mentir."
+            jent "Me siguió interrogando y entonces oímos llegar el speeder de Pa'. La rata se giró, pero no me soltó."
+            jent "Me hizo prometer que no le contaría a nadie nuestra conversación, o iría a por mi familia. Ella había memorizado el código del speeder de Pa'."
+            loquoy "Jent, tu padre y yo sabemos defendernos. Los moradores de las arenas no han podido con nosotros. ¡Que vengan las ratas!"
+            playerName "Has llamado {i}ella{/i} a la rata. ¿Por qué?"
+            jent "Tenía voz de mujer. Humanoide, al menos."
+            playerName "¿Qué más te preguntó?"
+            jent "Quería saber si yo había encontrado alguna nave espacial en la zona. Un carguero o algo así, en alguna de las cuevas."
+            jent "Le dije que no, ¡y era cierto! ¡No sé qué buscaba, pero yo no lo tenía!"
+            playerName "Tranquila, Jent."
+            loquoy "(Esta niña necesita una aventura de verdad pronto... Algo realmente épico)."
+            $ itemDiarioErmitano = 2
+        "Hyperhalo necesita una piloto." if questReclutarPiloto == 1 and hablarJentImperio == 1:
+            playerName "Tengo un trabajo para ti, necesitamos una piloto."
+            jent "¿Qué? Bueno, pero..."
+            show loquoy at left
+            loquoy "¡Un momento, forastero! ¿No irás a meter a mi niña a contrabandista?***"
+            playerName "No, señora. En este planeta, si quisiera un contrabandista, sé dónde conseguirlos."
+            loquoy "¿Pirata espacial, entonces?"
+            playerName "Tampoco. Sólo necesito que lleve unas naves hasta su propietario."
+            loquoy "Lástima. La piratería es una profesión honorable."
+            jent "¿Yo no tengo nada que opinar?"
+            loquoy "Llevas toda la vida queriendo ser piloto. Ve y consigue unas horas de vuelo hiperespacial en condiciones."
+            jent "Yo confío en [playerName], Ma, ¿pero tú estás segura con [tuPronombre]...?"
+            loquoy "[tuPronombreMayus] sabe que, si te hace algo, no descansaré hasta sacarle los redaños."
+            playerName "Quede tranquila, señora. Venga, Jent, vamos hacia la finca de Sedi Fisk, a convencer a tu nuevo jefe."
+            jent "Pero... ¿Quién es? Si por allí sólo vive..."
+            $ questReclutarPiloto = 2
+            hide jent
+            hide loquoy
+            scene bg casa graf
+            show jent at left
+            show graf
+            jent "Hola, Hawk. ¿A ti también te están contratando?"
+            graf "¿Qué estás haciendo, [playerName]? ¿Qué hace ella aquí?"
+            playerName "Necesitas un piloto, Halohunter. Ella es piloto."
+            graf "¡Ya sabes porqué no puedo implicarla! No me obligues a decirlo con ella delante."
+            playerName "Jent, ¿qué dirías si te ofrezco pilotar para la Nueva República?"
+            jent "¡Hey, estupendo! Sus cazas son una delicia y ellos son los buenos. ¿Piensan liberar Tatooine del Imperio? ¿Puedo ayudar?"
+            graf "¿Qué?"
+            jent "Espera: ¿Tú trabajas para la Nueva República? [playerName], nunca lo habría imaginado. Pensé que eras [tuUn] [tuEmpollon], sin más."
+            jent "¿Puedes recomendarme a tus jefes?"
+            playerName "Yo, no. Habla con tu amiga."
+            jent "¿Para qué voy a hablar con Hawk? Ella no está en la Nueva República."
+            graf "Ah... Esto..."
+            graf "Verás, Jent... Llevo casi tres años colaborando con la Alianza Rebelde. A tiempo parcial; me infiltro en agencias imperiales y hutts..."
+            "Jent se queda con la boca abierta y parpadea lentamente tres veces. Su voz sube dos agudos.***¿SE DICE ASÍ?"
+            jent "{b}¿¡¿QUÉ?!?{/b}"
+            jent "¿Eres una agente secreta rebelde y nunca me dijiste nada?"
+            graf "Era un secreto. Aún lo es. Por eso se llama agente {i}secreta{/i}..."
+            jent "Te conozco desde los cinco años y sabes que pilotar para la Alianza es mi sueño."
+            graf "No, tú querías pilotar para el Imperio..."
+            jent "Serías mi ídolo, mi heroína, y tú te lo callas. No sé si pegarte o besarte."
+            playerName "Jent, escucha: Hyperhalo tiene que sacar del planeta un escuadrón de cazas. Alguien debe pilotar la nave maestra."
+            playerName "Existe peligro."
+            graf "Jent, es importante. Esas naves tienen que llegar a la República. No va a ser fácil. Creo que tendrás que llegar hasta Kothlis, en el sector Bothan."
+            graf "Eres mi única esperanza, Jent. ¿Estarías dispuesta ayudarme con esto? ¿Pilotarás las naves en esta misión para la República?"
+            "Jent medita un instante, mirando al techo y acariciándose el mentón."
+            jent "No sin ti. Ahora te pregunto yo: ¿Te apetece subirte a una nave y vivir aventuras espaciales conmigo?"
+            playerName "¡Por favor! Buscáos una pequeña luna."
+            "Ambas te miran y se echan a reír."
+            playerName "Veo que vuestro problema está resuelto. Con permiso (de despegue), voy a seguir con mi vida."
+            graf "Gracias, [playerName]. Nunca podremos pagarte por tu ayuda."
+            jent "Hawk, ¿te parece que invitemos a Wassak? ¿Como mecánico de a bordo? Quizá consigamos droides copilotos..."
+            graf "Como si yo fuese a negarte algo..."
+            "Sales de la casa de Hyperhalo."
+            jump go_CasaGraf
+
+    jump go_GranjaLoquoy
+
+label hablarLoquoy:
+    loquoy "TBA Sobre Jent: Es una buena piloto."
+    loquoy "TBA Si le pinchas sobre el tema: Antes ella fue pirata espacial. Supongo que conoció a Bordo capturando su nave."
+    loquoy "TBA Ataques de los moradores. Darklighter sabe más"
+    loquoy "TBA Si le pinchas con el tema: el hijo de Darklighter fue un héroe rebelde.
+    $ hablarLoquoy = 1
+    hide loquoy
+
+    jump go_GranjaLoquoy
+
+label hablarDarklighter:
+
+    darklighter "TBA Darklighter saluda"
+    darklighter "TBA Árbol para descubrir de dónde vienen los ataques. Premio sólo si lo consigues. Pending esto***"
+    darklighter "TBA para el ejemplo voy a poner que está en la opción 2, pero ya te digo que hagas un árbol."
+    menu:
+        "Opción uno.":
+            darklighter "No, esto no es."
+        "Opción dos.":
+            darklighter "TBA Te digo de dónde vienen los ataques, está un poco al norte o lo que sea."
+            darklighter "TBA Después me disculpo y me marcho."
+            hide darklighter
+            $ hablarDarklighter = 1
+            $ descubrirDondeAtaques = 1
+
+    jump go_GranjaDarklighter
+
+label hablarGranjero:
+    if hablarGranjero == 0:
+        "TBA Sí saben sobre ataques."
+        "TBA Sí han oído las historias de ratas womp friquis."
+        $ hablarGranjero = 1
+    else:
+        "TBA Frases genéricas sobre ataques tusken."
+    jump go_Granjas
+
+
+label hablarCrimelord2EnCantina:
+
+    "TBA. Puedes negociar para que él se retire fácilmente desde allí, y que retire la investigación (aparece un droide mayordomo para eso)"
+    menu:
+        "¿Quieres convencerle para que él retire la investigación?"
+        "Sí":
+            "TBA Decir algo."
+            "TBA Aquí reconocerá que ha hablado con un alien concreto (la clawdita) que ha demostrado gran poder; sospecha que un sith."
+            "TBA tú eres escéptico."
+            $ conoceClawditaB = 1
+            $ itemInvestigacion = 1
+            $ crimelord2Activo = 2
+            call ComprobarLosTres
+            jump siguesEnCantina
+        "No":
+            pass
+
+    jump siguesEnCantina
+
+
+label hablarCamarero:
+
+    camarero "Hola, [playerName]. ¿Te sirvo lo de siempre? ¿Una mezcla precisa y un oído atento?"
+    playerName "Venga."
+
+    menu:
+        "¿Cómo consigo un permiso de despegue?" if preguntarPermisoEnCantina == 0:
+            playerName "¿Cómo puedo conseguir un permiso de despegue?"
+            camarero "Ah: La Oficina Imperial ha traspapelado el tuyo, ¿verdad?"
+            camarero "Pasa mucho, pero no te preocupes: Tiene remedio."
+            camarero "Te recomiendo hablar con ***KABE, aquí mismo, en la cantina. ***Ella sabe de estas cosas."
+            $ preguntarPermisoEnCantina = 1
+        "¿Cómo se consigue un cazarrecompensas?" if preguntarKabePorCazador == 1:
+            playerName "Si yo quisiera un cazarrecompensas, ¿cómo podría conseguir uno?"
+            camarero "TBA ¿Te acuerdas de Kabe? Es la listilla del bar, sabe de todo. Habla con ella."
+        "¿Cómo me libro de una investigación sobre mi nave?" if jugarLabria < 2:
+            playerName "Hay una investigación abierta en mi nave. Me acusan de contrabando. ¿Qué puedo hacer?"
+            camarero "Ni idea. Yo sólo sé sobre bebidas."
+            "El kaminoano alto con aspecto de borracho se fija en ti y se une a la conversación."
+            "***SHOW LABRIA LEFT, RIGHT?"
+            labria "Creo que yo podría ayudarte con ese problema. Me llamo Vasail Tai."
+            "¿Quieres hablar con Vasail?"
+            menu:
+                "Sí, hablar con Vasail.":
+                    jump hablarLabria
+                "Ahora mismo no.":
+                    labria "Claro, esperaré... Pero no sé cuánta gente por aquí puede ayudarte con ese problema."
+        "¿Quién es el kaminoano nuevo?" if jugarLabria < 2:
+            playerName "¿Quién es el kaminoano? No le había visto por aquí."
+            camarero "¿Quién? Ah, es un fracasado. Le dejo estar por aquí porque no pide dinero a los clientes."
+            camarero "Se llama Vasail Tai y dice que está intentando asentarse en la zona. Otro que llega a colonizar, con ganas del comerse la galaxia."
+        "Conversación ociosa.":
+            playerName "¿Nunca has pensado en volver a Polis Massa?"
+            camarero "Mi familia sigue allí. Eso me anima a seguir en otro sector."
+
+    jump siguesEnCantina
+
+
+label hablarCazador:
+    playerName "Quiero hablar con un cazarrecompensas."
+    funcionario "Hay uno por aquí. Voy a avisarle."
+    hide funcionario
+    playerName "Los cazarrecompensas son a menudo alienígenas que no han podido conseguir empleo policial por la política pro-humanos del Imperio."
+    playerName "A mí se me dan bien los alienígenas porque respeto y conozco sus culturas. Seguro que me lo gano en seguida."
+    show funcionario at left
+    show cazador
+    cazador "Soy 4-LOM, cazarrecompensas imperial autorizado. ¿Es usted identificación: [playerName]?"
+    playerName "Vaya, un droide."
+    if tuO == "o":
+        funcionario "Haz lo que te diga el caballero, escoria droide. Yo me voy a trabajar."
+    elif:
+        funcionario "Haz lo que te diga la dama, escoria droide. Yo me voy a trabajar."
+    hide funcionario
+    playerName "Hola, 4-LOM. Me llamo [playerName] y estoy buscando a Guso Gaethgan. Hay una recompensa por su cabeza."
+    cazador "1.500 créditos vivo y 750 muerto. La recompensa es baja." 
+    cazador "Pero Guso Gaethgan es un conocido asociado de otro criminal, Banndarr Bo. Me interesa su recompensa, así que persigo a ambos."
+    playerName "Quiero que Gaethgan sea capturado. Estoy dispuesto a colaborar contigo, pero no puedo encontrarle."
+    cazador "Sé dónde se esconde, pero no le he perseguido todavía. Estoy implicado en otras 47 cazas con más prioridad."
+    playerName "¿Y si me dijeses a mí dónde está? ¿Perjudicaría eso a tus otros trabajos?"
+    cazador "Tú podrías capturarle e intentar cobrar la recompensa por Gaethgan." 
+    cazador "No estás registrado como cazador, pero podrías estar asociado a uno de mis competidores."
+    menu:
+        "Nos repartiremos la recompensa.":
+            playerName "Te ofrezco el 50% de la recompensa, y no tendrás que hacer nada. Sólo darme esa información."
+            cazador "Pido el 72% de la recompensa, y sólo si está vivo."
+            playerName "¡Oh, vamos!"
+            cazador "..."
+            playerName "..."
+            cazador "..."
+            playerName "El 66%."
+            cazador "..."
+            playerName "Bueno, acepto."
+        "Renuncio a la recompensa.":
+            playerName "Te quedarás toda la recompensa."
+            cazador "Trato hecho."
+        "Tú dijiste que era una recompensa baja.":
+            playerName "Tú dijiste que era una recompensa baja y poco prioritaria."
+            cazador "Eres un duro negociador."
+    cazador "De acuerdo."
+    cazador "He descubierto que Gaethgan está en, o cerca de, el ex-palacio de Jabba."
+    playerName "Muchas gracias. Iré a buscarle."
+    cazador "Cuando le hayas capturado, dame una señal y yo me ocuparé de entregarle."
+    cazador "Pero recuerda: Si intentas traicionarme, todos los cazarrecompensas del sector irán a por ti."
+    playerName "Tranquilo, 4-LOM, confía en mí."
+    $ hablarCazador = 1
+    $ preguntarKabePorCazador = 3
+
+    jump go_OficinaImperial
+
+label hablarContrabandista:
+    if hablarContrabandista == 0:
+        contrabandista "No eres de por aquí, ¿verdad? ¿No serás un comerciante independiente haciéndome la competencia?"
+        playerName "No. Me llamo [playerName]. Soy xenobiólog[tuO] y estoy estudiando las ratas womp."
+        contrabandista "Soy Jobarrs TurJinda, capitán del {i}Tormenta de Melocotón{/i}. Es esta belleza de aquí."
+        playerName "Un precioso carguero ghtroc ***610. Hace tiempo que no los veo."
+        playerName "El casco tiene unas marcas de mynocks. Supongo que la falta de helio en Tatooine se habrá ocupado de ellos. Qué bien te habrá venido eso, ¿no?"
+        contrabandista "Eh, tú sabes de lo que hablas. Me encanta pasarme por Tatooine cuando pillo mynocks. El aire se ocupa de ellos sin que yo tenga que hacer nada."
+        $ hablarContrabandista = 1
+        
+    if crimelord2Activo == 2:
+        contrabandista "¿Cómo se te ocurre liquidar a ***Crimelord2? ¡Es ***un jefe del crimen!"
+        contrabandista "¡Nos has causado un montón de problemas a Tuercas y a mí!"
+        playerName "¿No debería Transportes Ororo asignaros a otro responsable?"
+        contrabandista "¡Oh, vete a frak!"
+
+    menu:
+        "Necesito un cazarrecompensas." if itemWantedPoster == 1 and hablarCazador == 0:
+            playerName "Estoy buscando un cazarrecompensas."
+            contrabandista "No, esto no funciona así: Es el cazarrecompensas el que te busca a ti."
+            "***SONIDO RISAS"
+            "TurJinda se ríe de su propio chiste un rato largo."
+        "Háblame de tu trabajo" if crimelord1Activo == 0:
+            playerName "Háblame de tu trabajo."
+            contrabandista "Bueno, soy un contrabandista. Hago matute de medicamentos, especia, armas..."
+            playerName "¿En serio?"
+            "***SONIDO RISAS"
+            contrabandista "¡Para nada! Trabajo para Transportes Ororo. Soy falso autónomo. Transporto comida, metales, tecnología y productos químicos."
+            playerName "Transportes Ororo... Recuerdo que tuvo un problema cuando varios directores fueron asesinados hace año y pico..."
+            contrabandista "Sí, muchos pilotos se hicieron independientes y se buscaron la vida ellos solos."
+            contrabandista "Conozco unos cuantos idiotas que se han ido a Sisar a importar agua, pero es carísimo adaptar las naves y hay que filtrar y purificar el agua al llegar. El retorno de inversión es frak; por eso yo seguí en Ororo."
+            contrabandista "Yo tenía razón, claro. Al final, el asunto de Ororo se estabilizó con un nuevo comité de mando. Ahora trabajo para ***un tal ***Crimelord2. Está bien."
+            contrabandista "Pero este sector va mal desde la muerte de Jabba. Jabba era un gánster, y eso es bueno: Era uno solo. Se podía tratar con él."
+            contrabandista "Ahora hay un montón de jefes del crimen que intentan hacerse con este territorio, y eso complica el tráfico."
+            $ crimelord1Activo = 1
+            $ crimelord2Activo = 1
+            $ jugarLabria = 1
+        "¿De dónde despegaste?" if apalizadoPorTropas == 1 and ordenadorNav == 0:
+            playerName "¿De dónde vienes, TurJinda?"
+            contrabandista "De Duro, claro. Nací en Orr-Om. ¿Por qué?"
+            playerName "No te hagas el kowakiano. ¿De dónde despegó tu nave? ¿Qué ruta seguiste hasta Tatooine?"
+            contrabandista "¿Tiene algún problema conmigo? ¿Buscas pelea?"
+            playerName "Creí que eras un honesto comerciante en la nómina de Transportes Ororo."
+            contrabandista "Claro que lo soy. Mira mis permisos. Todo legal, todo estándar."
+            playerName "Según estos permisos, tu ruta es pública."
+            contrabandista "¿Pero qué frak quieres de mí?"
+            menu:
+                "Saber de dónde salieron tus mynocks.":
+                    playerName "Soy xenobiólogo y quiero saber en qué mundo recogiste esos mynocks."
+                    playerName "Hay diferencias entre los mynocks dependiendo de dónde han aparecido."
+                    contrabandista "Si supiera dónde se me pegaron los mynocks al casco, yo habría evitado pasar por allí. Alimañas asquerosas."
+                    playerName "Tú pásame la ruta de tu nave y echaré un vistazo."
+                    contrabandista "Como quieras."
+                    "Recibes ruta del Tormenta de Melocotón.***"
+                    $ itemRutaMelocoton = 1
+                    $ ordenadorNav = 1
+                "Busco una plaga, debo saber si has pasado por cierto sistema.":
+                    playerName "Ha habido un problema en un sistema cercano. Un arma biológica desarrollada durante la guerra ha causado una epidemia."
+                    playerName "Si has aterrizado allí, puedes llevar algo en tu nave.***"
+                    contrabandista "¿Qué? Eso es un peligro..."
+                    playerName "Tú eres reptiliano y no creo que te afecte; pero hay que evitar estallidos.***"
+                    playerName "Prefiero no decirte qué sistema todavía, para evitar sembrar el pánico. ¿De acuerdo?"
+                    playerName "Si hay motivo de preocupación, te avisaré."
+                    contrabandista "Tranquilo, colaboraré contigo."
+                    "Recibes ruta (REAL***) del Tormenta de Melocotón.***"
+                    $ itemRutaRealMelocoton = 1
+                    $ ordenadorNav = 1
+                "Ororo me manda para auditarte.":
+                    playerName "Transportes Ororo me ha contratado para auditar tu nave."
+                    contrabandista "¿Qué?"
+                    playerName "Será un análisis rutinario."
+                    contrabandista "¿Quién te ha contratado? ¿Con quién has hablado?"
+                    "****ESTOS MENÚS ENCADENADOS, PRUÉBALOS"
+                        menu:
+                            "Fue ***Crimelord2 en persona.":
+                                playerName "Me contrató ***Crimelord2. Está por Tatooine y quiere verificar unos asuntos."
+                                contrabandista "Eso no es propio de él***, pero es cierto que está en Tatooine."
+                            "Traté con un droide de protocolo.":
+                                playerName "Enviaron un droide de protocolo a negociar conmigo."
+                                contrabandista "Transportes Ororo, siempre racaneando en personal perceptor. Qué propio de ellos."
+                    contrabandista "Tu historia parece cierta. Aquí tienes mi ruta."
+                    "Recibes ruta del Tormenta de Melocotón.***"
+                    $ itemRutaMelocoton = 1
+                    $ ordenadorNav = 1
+                "¿Acaso tienes algo que ocultar?":
+                    playerName "¿Qué pasa? ¿Tienes algo que ocultar?"
+                    playerName "¿Prefieres que contacte con Transportes Ororo y se la pida a ellos? Les tendría que decir que no has querido dármela."
+                    contrabandista "Es información pública, pero no te servirá para nada. ¿Crees que he cogido algún atajo secreto sin cartografiar?"
+                    contrabandista "Adelante, toma."
+                    "Recibes ruta del Tormenta de Melocotón.***"
+                    $ itemRutaMelocoton = 1
+                    $ ordenadorNav = 1
+        "Ahora dame la ruta de verdad." if itemRutaMelocoton == 2 and itemRutaRealMelocoton == 0:
+            playerName "Eres muy listo, TurJinda. Me has tenido un rato buscando el tesoro perdido de Xim el Déspota."
+            playerName "Ahora dame tu {b}auténtica{/b} ruta hiperespacial."
+            contrabandista "Pero ya te he dado la ruta, sabes perfectamente mi camino..."
+            playerName "No me frak, TurJinda. La ruta que me has pasado es falsa, y lo puedo demostrar. ¿Quieres que empiece a airearlo?"
+            contrabandista "Déjame que te explique..."
+            playerName "Si tu ruta es pública, entonces podré confirmarlo echando un vistazo a tu bitácora de a bordo, ¿no?"
+            contrabandista "A ver, espera..."
+            playerName "TurJinda, dame tu ruta ahora."
+            contrabandista "Me vas a meter en un lío..."
+            playerName "¿Con Transportes Ororo? Tienen una reputación aterradora, ¿verdad?"
+            contrabandista "Oh... Frak..."
+            "Recibes ruta del Tormenta de Melocotón.***"
+            $ itemRutaRealMelocoton = 1
+        "¿Y qué si me he cargado a ***Crimelord2?" if crimelord2Activo == 2:
+            playerName "Sí, ***Crimelord2 es historia gracias a mí. ¿Y qué?"
+            contrabandista "Ahora sé quién eres. No te das cuenta del problema en que estás metido. ¡Te crees que te ha incriminado un jefe criminal!"
+            contrabandista "Tienes problemas más grandes. Te han incriminado para hacer un favor a alguien realmente poderoso, alguien que no parará hasta destruirte."
+            show copiloto at left
+            contrabandista "No es el momento, Tuercas. Sea lo que sea, no es el momento."
+            playerName "¿Tienes algún nombre que darme?"
+            copiloto "Es el regreso de los sith, [playerName]. Estás perdid[tuO]. Es la lady del sith, Belia Darzu."
+            playerName "Eso es absurdo ¡Darzu murió hace más de mil años!"
+            copiloto "¿Estás segur[tuO]? Los sith son poderosos y tienen muchos secretos."
+            contrabandista "Hemos visto a Darzu y hemos sido testigos de su poder. Mató a varios contrabandistas rivales sin sudar."
+            contrabandista "Después hablamos con su lugarteniente zabrak mientras tomábamos fizzyglug. Nos explicó lo que iba a pasar:"
+            contrabandista "Por sus propias razones, Lady Darzu estaba aniquilando a varios enemigos de Crimelord2***. Eso le daba a Crimelord2*** la ocasión de prosperar."
+            contrabandista "Pero a cambio, cuando Lady Darzu pidiese algo a Crimelord2***... Bueno, no iba a ser opcional. Y nosotros trabajamos para Crimelord2***."
+            playerName "Un momento: ¿El lugarteniente de Darzu era un zabrak, y bebía fizzyglug?"
+            contrabandista "Cada frak vez. Tuvimos varios encuentros y siempre pedía eso para todos. ¿Conoces a ese zabrak?"
+            playerName "No, no conozco a ningún zabrak que beba una soda. La constitución de la especie es tan fuerte que no notarían ningún efecto tomando fizzyglug."
+            contrabandista "Por lo menos, no era fizzyglug light ni original, eso te lo confirmo."
+            $ conoceClawditaC = 1
+        "Dime algo de tus viajes.":
+            contrabandista "Yo nací en Orr-Om; por eso mi piel es gris verdosa."
+            contrabandista "Mis padres tenían claro lo que querían para mí. Un empleo de ingeniero en los Astilleros de Astronaves de Duro. Un matrimonio con la hija de sus amigos. Una vida en la que no me metiese en líos."
+            contrabandista "Ellos habían sido duramente diligentes durante décadas, y no querían que yo sufriese ninguna adversidad."
+            contrabandista "Por supuesto, tuve que escaparme de allí o me habría vuelto loco."
+            contrabandista "Oh, yo fui el buen hijo todo el tiempo que hizo falta, por supuesto. Aprendí todo lo que necesitaba. Iba a escapar por la puerta grande. Iba a dejar mi huella en la galaxia. El apellido TurJinda será recordado, quieran o no."
+            contrabandista "Mi oportunidad fue en el sector Mytaranor, en plena zona de guerra. Yo me ocupaba del mantenimiento de unas lanzaderas en una nave nodriza; pero por supuesto sabía pilotarlas. Nadie me dio exactamente órdenes de mantenerme en cubierta, porque se sobreentendía."
+            "SHOW TRANDOSHAN AT LEFT***"
+            contrabandista "Secuestré una lanzadera en solitario para evacuar refugiados durante un bombardeo planetario. Los mantuve en mi bodega, y al mismo tiempo impedí que se matasen unos a otros cuando se dieron cuenta de que la otra mitad venía del planeta rival: Wookiees 
+y trandoshanos. ¡Nunca me había divertido tanto!"
+            contrabandista "Fui despedido y rechazado por las principales empresas, pero no es difícil conseguir una nave y labrarse una reputación como piloto independiente. Sólo necesitas unas cuantas proezas a tu nombre, y yo ya tenía la primera."
+            "SHOW BITH AT LEFT***"
+            contrabandista "También viene bien aceptar trabajos peculiares. Llevé en una gira a Figrin D'an y los Nodos Modales, sabiendo que su agente había encargado a unos granujas darles una lección y avergonzarles ante los paparazzi. Y todo, sin perder el cargamento oculto en la bodega."
+            "SHOW TILOTNY AT LEFT***"
+            contrabandista "Estaba este tipo que afirmaba haber vendido su alma a un demonio a cambio de fortuna, pero que sólo viviría una década más si su campeón vencía al demonio en una carrera naval en el Púlsar del Manicomio. Nunca había visto lugar más extraño, pero gané. Hice trampas, claro."
+            "SHOW JANGO AT LEFT***"
+            contrabandista "Y también estuvo la vez en que saqué de territorio imperial al último clon de Jango Fett, uno sin envejecimiento acelerado. Era una niña de doce años. Ella se portó muy bien, pero le faltaba un hervor."
+            "HIDE JANGO"
+            playerName "¿Y tus padres? ¿Qué piensan de todo esto?"
+            contrabandista "Hace muchos años que no les veo. No creo que yo pudiera soportar el encuentro."
+        "Despedirse.":
+            playerName "Cielos despejados, TurJinda."
+            if ordenadorNav == 0:
+                contrabandista "Cielos despejados, [playerName]."
+            else:
+                contrabandista "Vuela rápido y lejos, [playerName]."
+            pass
+    jump go_OtroHangar
+
+
+label hablarCrimelords:
+
+# RECUERDA: Tenemos Crimelord 1, que captura tuskens y tiene weequays;
+# Crimelord 2, que te ha liado para esto y está mezclado con Clawdita, y es Sol Negro;
+# y Crimelord 3 que es un hutt, y va a ser 3 la mejor opción
+
+    "primeraVezTrastienda: %(primeraVezTrastienda)d. crimelord1Activo: %(crimelord1Activo)d."
+
+    if crimelord1Activo < 2:
+        show crimelord1 at left
+    if crimelord2Activo < 2:
+        show crimelord2
+    show crimelord3 at right
+
+    # HAS ESTADO AQUÍ, VUELVES PERO AÚN NO TIENES NADA
+    if primeraVezTrastienda == 1 and crimelord1Activo == 1 and crimelord2Activo == 1:
+        "TBA Crimelord1 puede hablar sobre la importancia de sus cosas y de sembrar el caos y algo. Es weequays y mata tuskens y hostiga todos."
+        "TBA Crimelord2 puede hablar sobre las personas potentes que le respaldan y que no se atrevan a ir contra él (Sol Negro, Belia Darzu)."
+        "TBA Crimelord3 puede hablar sobre la influencia Hutt que no puede desaparecer, y cómo traerá prosperidad a Tatooine."
+        jump go_Trastienda
+        
+    if primeraVezTrastienda == 1 and crimelord1Activo == 1 and crimelord2Activo == 1:
+        "TBA Crimelord2 puede hablar sobre las personas potentes que le respaldan y que no se atrevan a ir contra él (Sol Negro, Belia Darzu)."
+        "TBA Crimelord3 puede hablar sobre la influencia Hutt que no puede desaparecer, y cómo traerá prosperidad a Tatooine."
+        jump go_Trastienda
+
+    # HAS VENCIDO A CRIMELORD 1; VARIAS OPCIONES:
+    # TIENES PRUEBAS CONTRA ÉL, pero no has puesto a los tusken en su contra
+    if primeraVezTrastienda == 1 and crimelord1Activo == 1 and itemCabezaDroide == 1:
+        "TBA (Tienes pruebas comprometidas contra crimelord1; pero no has puesto a los tusken en su contra)"
+        "TBA Eh, cojonudo: Si las enseñas a Crimelord1 e intentas chantajearle para que te deje en paz, él te asesina. Un problema menos."
+        "TBA Te han matado. Bad ending."
+        return
+
+    # LE DISTE LA CABEZA DE DROIDE A TUSKEN BOB. Crimelord1Activo = 2 porque ha muerto a manos de los tusken            
+    if primeraVezTrastienda == 1 and crimelord1Activo == 2 and crimelord1Activo == 1:
+        "TBA Crimelord2 y 3 dicen algo sobre la muerte de Crimelord 1"
+        "TBA Crimelord2 dice algo sobre el evidente poder de su gente."
+        "TBA Crimelord1 dice algo sobre cómo su salvajismo no puede prosperar."
+        jump go_Trastienda
+
+    # HAS VENCIDO A CRIMELORD 2; DOS OPCIONES
+    # Has convencido a CRIMELORD 2 en la cantina y ahora entras en la trastienda
+    if primeraVezTrastienda == 1 and informacionImplicaCrimelord2 == 1 and crimelord2Activo == 2:
+        "TBA Los otros crimelords dicen que Crimelord 2 se retira de la competición."
+        "TBA que no saben porqué, pero que es cosa tuya y están contentos."
+        jump go_Trastienda
+ 
+    # Si estás en la TRASTIENDA, y AÚN NO HAS DELATADO AL CRIMELORD, Y LE HABLAS EN TRASTIENDA
+    if primeraVezTrastienda == 1 and informacionImplicaCrimelord2 == 1 and crimelord2Activo == 1:
+        "TBA Has pillado a Crimelord 2 en un renuncio."
+        "TBA Los otros crimelords le criticarán por su demostración pero le darán la opción de retirarse"
+        "TBA Dependiendo de lo que propongas, le dejan vivir, le matan en el sitio, incluso te matan a ti."
+        "TBA En una opción, el hutt hace que asesinen a Crimelord 2 cuando se vaya."
+        "TBA Tienes que Seguir Árbol de Decisión correctamente para que además cancelen tu Investigación"
+        "TBA (Varias opciones lo consiguen; una después de que Crimelord se retire)"
+        "TBA Cuidado: Si está Crimelord 1 activo, este árbol de decisión (diálogo) es distinto que si está muerto."
+        $ itemInvestigacion = 1
+        $ crimelord2Activo = 2
+        call ComprobarLosTres
+        jump go_Trastienda
+
+
+    # HAS VENCIDO A AMBOS CRIMELORDS
+    # SI NO TIENES EL ITEM INVESTIGACIÓN
+    if primeraVezTrastienda == 1 and crimelord1Activo == 2 and crimelord2Activo == 2 and itemInvestigacion == 0:
+        "TBA Hablar con el Hutt para convencerle de que retire la investigación, en un árbol de decisión - O te matará."
+        menu:
+            "Te mata.":
+                return
+            "No te mata.":
+                "No te ha matado."
+                jump go_Trastienda
+
+    if primeraVezTrastienda == 1 and crimelord1Activo == 2 and crimelord2Activo == 2 and itemInvestigacion == 1:
+        hide crimelord1
+        hide crimelord2
+        "TBA Puedes hablar con el hutt, que seguramente no te mate porque esté en plan generoso."
+        if conoceClawditaB == 0:
+            "TBA entonces a lo mejor el hutt puede darte esa información - ha hablado con alien de gran poder. Sospecha que sith. Pero árbol difícil de llegar."
+            $ conoceClawditaB = 1
+    jump go_Trastienda
+
+
+    # CONVERSACIÓN INICIAL    
+    # Ésta es la conversación inicial - que tiene que ir al final
+    if primeraVezTrastienda == 0 and (crimelord1Activo == 0 or crimelord1Activo == 1):
+        # Crimelord 1 activo; Crimelord 2 activo. 0 no los conoces; 1 les conoces y están activos. 2 has eliminado a ese.
+        # (Así que en el primer diálogo pasan a Crimelord1 Activo = 1)
+        "TBA. Los amos del crimen están reunidos en la parte del fondo, y Labria ha creído que eras un 4º en discordia así que te ha dejado entrar"
+        "Hablas con ellos tres. Conversación bastante peligrosa"
+        "Esto es un negocio legítimo, nada de mafia."
+        "Posibles muertes."
+        "TBA. Yada yada, controlan rutas distintas y negocios distintos. (El hutt pretende hacer contrabando de agua.)"
+        "Los crimelords aceptan que contribuyas a decidir, investigándoles uno a otro"
+        "y ofreciéndote recompensas por apoyarles y muertes horribles por perjudicarles."
+        $ primeraVezTrastienda = 1
+        $ crimelord1Activo = 1  
+        $ crimelord2Activo = 1
+        jump go_Trastienda
+    
+    if primeraVezTrastienda == 0 and crimelord1Activo == 2:
+        # HAS VENCIDO A Crimelord 1 antes de entrar en la trastienda
+        "TBA. Diálogo diferente: CRIMELORD 1 NO ESTÁ"
+        "TBA. Los amos del crimen están reunidos en la parte del fondo, y Labria ha creído que eras un 4º en discordia así que te ha dejado entrar"
+        "Hablas con ellos DOS ahora. Conversación bastante peligrosa"
+        "Esto es un negocio legítimo, nada de mafia."
+        "Posibles muertes."
+        "TBA. Yada yada, controlan rutas distintas y negocios distintos. (El hutt pretende hacer contrabando de agua.)"
+        "Los crimelords aceptan que contribuyas a decidir, investigándoles uno a otro"
+        "y ofreciéndote recompensas por apoyarles y muertes horribles por perjudicarles."
+        $ primeraVezTrastienda = 1
+        $ crimelord2Activo = 1
+
+    jump go_Trastienda
+
+
+label hablarFuncionario:
+
+    funcionario "Buenos días o tardes, soy Harburik de la Oficina Imperial, ¿qué puedo hacer por usted, tiene un trámite abierto?"
+    "El funcionario, con uniforme de teniente no levanta la vista para hablar contigo, sino que sigue trabajando en su ordenador."
+    menu:
+        "Necesito un permiso de despegue." if intentarPermisoEnOficina == 0:
+            playerName "Mi permiso de despegue se ha extraviado."
+            funcionario "¿Seguro que su nave tenía un permiso de despegue en primer lugar?"
+            playerName "Mi nave llegó a Tatooine con un permiso de aterrizaje y de despegue. Si no tuviese permiso de aterrizaje, no habría podido usar un hangar en esta ciudad."
+            playerName "¿Puede buscar el permiso de {i}aterrizaje{/i} de mi nave? Se llama {i}[tuNave]{/i}."
+            funcionario "No hay ningún permiso de aterrizaje listado para esa nave, pero está en el hangar ***. Jum. ¿Cómo ha llegado a ese hangar sin un permiso de aterrizaje y sin saltar alarmas?"
+            playerName "Es posible que ese permiso exista y haya sido traspapelado."
+            playerName "Tengo una copia de mis permisos para mi uso personal, que incluye toda la numeración para seguir el rastro..."
+            funcionario "Pero esta copia no está validada ni homologada. Tendríamos que asumir que pueda ser falsa."
+            funcionario "Debemos abrir un expediente para que se analice qué ha sucedido y evitar que vuelva a ocurrir. Gracias por su interés, [playerName]."
+            playerName "Eso está muy bien, pero yo aún no tengo mi permiso de despegue."
+            funcionario "En cuanto descubramos qué ha sucedido, autorizaremos su despegue. Mi personal ya está trabajando en ello. Lo que queda de mi personal."
+            funcionario "Le aseguro que el Imperio es muy escrupuloso siguiendo y erradicando cualquier error***CITA INICIAL BRAZIL, BUSCARLA."
+            $ intentarPermisoEnOficina = 1
+        "Quiero hablar con un cazarrecompensas." if preguntarKabePorCazador == 2:
+            $ itemWantedPoster = 2
+            jump puedesHablarConCazador
+        "¿Cómo va mi permiso de despegue?" if intentarPermisoEnOficina == 1 and itemPermisoDespegue == 0:
+            playerName "¿Sabe algo de mi permiso de despegue, teniente Harburik?"
+            funcionario "Hemos analizado cuidadosamente la situación y hemos concluido que...{p}efectivamente existía un permiso de despegue a nombre de su nave, {i}[tuNave]{/i}."
+            playerName "¡Estupendo! ¿Entonces autoriza mi despegue?"
+            funcionario "No hasta que descubramos qué ha pasado exactamente o recibamos órdenes superiores de que lo hagamos."
+            funcionario "Compréndalo, no podemos ir contra el procedimiento."
+        "¿Un jawa ha traido aquí un droide sonda?" if visteDeclaracionWassak == 1:
+            playerName "Un jawa me ha dicho que les entregó un droide sonda roto hará unos diez días."
+            funcionario "¿Qué?"
+            playerName "¿Es cierto?"
+            funcionario "¿Droide sonda? Ni idea. Quizá le atendió otra persona."
+            playerName "¿Puede comprobarlo en el ordenador?"
+            funcionario "Tengo mejores cosas que hacer con mi tiempo, hay un montón de trabajo pendiente."
+            funcionario "Si no hay un motivo muy bueno para investigarlo... Simplemente no es prioritario."
+        "No, no tengo un trámite abierto.":
+            playerName "No, no tengo un trámite abierto."
+            funcionario "Deje pasar al siguiente, por favor."
+            funcionario "Buenos días o tardes, soy Harburik de la Oficina Imperial, ¿qué puedo hacer por usted, tiene un trámite abierto?"
+        "¿Necesita algo?":
+            playerName "¿Puedo hacer yo algo por usted?"
+            funcionario "TBA, contándote lo que ha pasado desde la caída del emperador.***"
+
+    jump go_OficinaImperial
+
+
+label hablarKabe:
+
+    kabe "Hola, [playerName]. ¿Tienes algo que preguntarme?"
+    playerName "Posiblemente, ***KABE, posiblemente."
+    kabe "¿Me va a caer una copa en pago?"
+    playerName "(Suspiro) Que ***Disher lo anote en mi cuenta."
+    
+    menu:
+        "¿Cómo consigo un permiso de despegue? if preguntarPermisoEnCantina == 1:
+            playerName "¿Sabes cómo puedo conseguir un permiso de despegue?" 
+            kabe "Desde luego, no en la Oficina Imperial. Ésos lo volverían a perder."
+            kabe "Necesitas a alguien que accede a sus ordenadores sin autorización, encuentre tu documento y lo valide. Un rebanador."
+            kabe "Necesitas a Hyp."
+            playerName "¿Hyp...?"
+            kabe "Hawk Hyperhalo. 'Hyp'. No encontrarás un rebanador mejor en todo el sector Arkanis."
+            kabe "Dicen que Hyp aprendió de la legendaria traficante de datos Shenir Rix."
+            playerName "¿Dónde puedo encontrar a Hyp?"
+            kabe "Vive cerca de la finca de Sedi Fisk.
+            playerName "Gracias, ***KABE."
+            $ preguntarPermisoEnCantina = 2
+        "¿Dónde hay cazarrecompensas?" if preguntarKabePorCazador == 1:
+"¿Sabes cómo puedo conseguir un cazarrecompensas?" 
+            playerName "¿Sabes dónde puedo contratar un cazarrecompensas?"
+            kabe "Claro."
+            kabe "Vete a la Oficina Imperial; allí están los cazadores."
+            kabe "Necesitan mantener al día sus permisos y registrar las presas que buscan para que les dejen trabajar en el sistema."
+            $ preguntarKabePorCazador = 2
+
+        "¿Cómo puedo retirar la investigación sobre mi nave?" if jugarLabria == 1:
+            playerName "Kabe*, ¿cómo puedo retirar la investigación de contrabando sobre mi nave?"
+            kabe "¿Te han acusado de contrabando? ¡Es ridículo! Tienes una bodega enana y paseas ratas womp."
+            kabe "Está bastante claro lo que ha pasado: Alguien te quiere mal y te está incriminando. Quizá quieren que nadie se fije en otra nave."
+            playerName "¿Se te ocurre cómo convencer al Imperio de que lo retire? ¿Crees que un rebanador podría conseguirlo?"
+            kabe "Buf, eso es complicado..."
+            "El kaminoano alto con aspecto de borracho se fija en ti y se une a la conversación."
+            "***SHOW LABRIA LEFT, RIGHT?"
+            labria "Creo que yo podría ayudarte con ese problema. Me llamo Vasail Tai."
+            "¿Quieres hablar con Vasail?"
+            menu:
+                "Sí, hablar con Vasail.":
+                    jump hablarLabria
+                "Ahora mismo no.":
+                    labria "Claro, esperaré... Pero no sé cuánta gente por aquí puede ayudarte con ese problema."
+                    
+        # Jugaste Con Labria: 0 aún no aparece Labria, 1 Labria ya aparece, no has hablado con él;
+        # 2 jugaste y perdiste (otro diálogo), 3 Has ganado; si le hablas te dice alguna chorrada; 4 Labria ya no aparece.
+
+        "¿Quién es el kaminoano ebrio?" if jugarLabria == 1:
+            playerName "*KABE, ¿quién es el kaminoano de ahí?"
+            kabe "¿Vasail Tai? No le hagas caso. Es sólo un borracho."
+            playerName "Reconoce conmigo que no se ven muchos kaminoanos por aquí."
+            kabe "De vez en cuando alguno, si sabes dónde mirar. Hace unos años, unos cuantos empresarios ricos de Kamino cambiaron de nave en Mos Eisley. Pero ésos sabían lo que hacían."
+            kabe "Vasail es un perdedor con ínfulas de tahúr. Hace apuestas fáciles con la gente pero, cuando alguien pierde, no le pide dinero."
+            playerName "¿Entonces para qué apuesta?"
+            kabe "Dice que está intentando hacerse un nicho, conocer el terreno y un montón de palabras vacías. Sospecho que en un mes, Vasail será historia o se habrá metido a granjero de humedad."
+            kabe "Sobre todo, si no cambia su sistema de apuestas. Son tan evidentes que yo te podría decir los resultados antes de cada juego."
+            "¿Hablar ahora con Vasail?"
+            menu:
+                "Sí, hablar con Vasail.":
+                    jump hablarLabria
+                "Ahora mismo no.":
+                    pass
+
+        "¿Me das pronósticos para las apuestas?" if jugarLabria == 2 and pronostico == 0:
+            playerName "Quiero apostar con Vasail y ganarle. ¿Me ayudas?"
+            kabe "Claro. ¿Qué necesitas?"
+            menu:
+                playerName "El pronóstico de swoops.":
+                    playerName "El pronóstico de las carreras de swoops."
+                    $ pronostico = renpy.random.randint(4, 6)
+                    if pronostico == 4:
+                        "Sin duda ganará Dengar. Ha metido más potencia a su swoop, y ese refuerzo le dará un sprint final clave."
+                    elif pronostico == 5:
+                        "El Flare-S de Kimmi Chyler tiene los mejores propulsores y timones. Nadie gira con ella. Ganará seguro."
+                    else:
+                        "En esta pista, RX-24 tiene la ventaja. Fue piloto espacial y sus fotorreceptores y tiempo de respuesta serán decisivos."
+                        $ pronostico = 6
+                playerName "Trucos de sabacc.":
+                    playerName "Trucos para ganarle al sabacc."
+                    $ pronostico = renpy.random.randint(1, 3)
+                    if pronostico == 1:
+                        "TBA pronostico 1"
+                    elif pronostico == 2:
+                        "TBA pronostico 2"
+                    else:
+                        "TBA pronostico 3"
+                        $ pronostico = 3
+        "¿Qué sabes de ratas womp?":
+            playerName "¿Qué sabes sobre ratas womp?"
+            kabe "No sé nada de ratas womp."
+
+    jump siguesEnCantina
+
+label hablarLabria:
+# Jugaste Con Labria: 0 aún no aparece Labria, 1 Labria ya aparece, no has hablado con él;
+# 2 jugaste y perdiste (otro diálogo), 3 Has ganado; si le hablas te dice alguna chorrada; 4 Labria ya no aparece.
+# Existe además JugandoConLabria
+
+    labia "Saludos, venerad[tuO]."
+    if jugarLabria == 1:
+        playerName "Hola. Soy [playerName]."
+        labria "Sí, sí, por supuesto. [playerName], astut[tuO] e importante. Tu reputación te precede. Yo soy Vasail Tai, claro."
+        playerName "Estoy buscando algo y tal vez tú puedas ayudarme..."
+        "Vasail vacía su vaso de un trago y pide dos de lo mismo, poniéndote uno de ellos delante."
+        labria "Eso está bien, [playerName]. Me encantará ayudarte si puedo. Yo no tengo grandes talentos, pero ya he empezado a hacer contactos, y quizá pueda llevarte ante la gente que resolverá tus problemas."
+        labria "Por supuesto, tú tendrás que resolver los problemas de otros. ¿Qué te parece la idea?"
+        playerName "Claro. Permíteme que te explique la cuestión en detalle..."
+        labria "Sí, sí, eso suena bien, pero es mejor que antes nos relajemos con un pequeño juego de azar. Primero diversión, y después negocios. ¿De acuerdo?"
+        playerName "No sé si tengo tiempo para esto..."
+        labria "Lo hacemos así: Una pequeña apuesta. Gáname, y te llevaré ante las personas que pueden resolver ese malentendido burocrático."
+        playerName "¿Y si pierdo?"
+        labria "No pasará nada grave. Ésta es de prueba."
+        playerName "Oh, bueno, si es de prueba, probemos."
+
+        "TBA. Conversación de conocerte, y después opción de jugar. Venga, que es de prueba - y te promete ayuda con tus trámites tipo investiación"
+        "TBA. Pareces un tipo astuto e importante. ¿Te apetece una apuesta?"
+        "TBA. Fuérzalo un poco para que tenga que jugar; que si no me complicas la siguiente opción y hay que hacer más variables."
+        $ jugarLabria = 2
+        jump jugandoConLabria
+
+    if jugarLabria == 2:
+        labria "Hola otra vez. ¿Te apetece volver a probar suerte?"
+        menu:
+            "Claro, juguemos.":
+                jump jugandoConLabria
+            "Ahora mismo no me apetece.":
+                labria "Sin problemas, otra vez será."
+
+    if jugarLabria == 3:
+        labria "Has ganado. Puedes ir ahora a la puerta del fondo a disfrutar de tu premio."
+        menu:
+            "Ir ahora a la puerta del fondo.":
+                jump Trastienda
+            "Quizá luego.":
+                labria "No te preocupes... pero deberías ir pronto."
+                labria "Es un consejo de amigo. No todo el mundo es tan paciente como tú."
+                
+    jump go_Cantina
+
+label jugandoConLabria:
+    playerName "Apostemos. ¿Qué me ofreces?"
+    labria "Elige entre sabacc y carreras de swoops."
+    menu:
+        "Juguemos al sabacc.":
+            "TBA, descripción de las manos. Opciones disponibles de respuesta."
+            menu:
+                "TBA Hago esta opción":
+                    if pronostico == 1:
+                        "TBA texto victoria."
+                        jump ganasteALabria
+                    else:
+                        labria "Has perdido, otra vez será"
+                        labria "TBA. Dont worry, no te cobro aún. Lo guardamos y puedes pedir la revancha cuando quieras. No irás a ninguna parte"
+                        "TBA. Pero si soy viajero espacial."
+                        "Sí, sí, eso dicen todos. Nadie escapa de Tatooine"
+                        $ pronostico = 0
+                        jump go_Cantina
+                "TBA Hago esta otra opción":
+                    if pronostico == 2:
+                        "TBA texto victoria."
+                        jump ganasteALabria
+                    else:
+                        "Has perdido, otra vez será"
+                        "TBA. Dont worry, no te cobro aún. Lo guardamos y puedes pedir la revancha cuando quieras. No irás a ninguna parte"
+                        "TBA. Pero si soy viajero espacial"
+                        "Sí, sí, eso dicen todos. Nadie escapa de Tatooine"
+                        $ pronostico = 0
+                        jump go_Cantina
+                "TBA Paso":
+                    if pronostico == 3:
+                        "TBA texto victoria."
+                        jump ganasteALabria
+                    else:
+                        "Has perdido, otra vez será"
+                        "TBA. Dont worry, no te cobro aún. Lo guardamos y puedes pedir la revancha cuando quieras. No irás a ninguna parte"
+                        "TBA. Pero si soy viajero espacial"
+                        "Sí, sí, eso dicen todos. Nadie escapa de Tatooine"
+                        $ pronostico = 0
+                        jump go_Cantina
+
+        "Apostemos en las carreras.":
+            "TBA, descripción de los pilotos. Opciones disponibles."
+            menu:
+                "TBA Apuesto por Dengar.":
+                    if pronostico == 4:
+                        "TBA texto victoria."
+                        jump ganasteALabria
+                    else:
+                        "Has perdido, otra vez será"
+                        "TBA. Dont worry, no te cobro aún. Lo guardamos y puedes pedir la revancha cuando quieras. No irás a ninguna parte"
+                        "TBA. Pero si soy viajero espacial"
+                        "Sí, sí, eso dicen todos. Nadie escapa de Tatooine"
+                        $ pronostico = 0
+                        jump go_Cantina
+                "TBA Apuesto por Kimmi Chyler.":
+                    if pronostico == 5:
+                        "TBA texto victoria."
+                        jump ganasteALabria
+                    else:
+                        "Has perdido, otra vez será"
+                        "TBA. Dont worry, no te cobro aún. Lo guardamos y puedes pedir la revancha cuando quieras. No irás a ninguna parte"
+                        "TBA. Pero si soy viajero espacial"
+                        "Sí, sí, eso dicen todos. Nadie escapa de Tatooine"
+                        $ pronostico = 0
+                        jump go_Cantina
+                "TBA Apuesto por RX-24.":
+                    if pronostico == 6:
+                        "TBA texto victoria."
+                        jump ganasteALabria
+                    else:
+                        "Has perdido, otra vez será"
+                        "TBA. Dont worry, no te cobro aún. Lo guardamos y puedes pedir la revancha cuando quieras. No irás a ninguna parte"
+                        "TBA. Pero si soy viajero espacial"
+                        "Sí, sí, eso dicen todos. Nadie escapa de Tatooine"
+                        $ pronostico = 0
+                        jump go_Cantina
+                        
+    jump go_Cantina
+
+label ganasteALabria:
+    "TBA. Ya sabía yo que eras alguien con recursos. Estoy seguro de que vale la pena que estés informado."
+    "TBA. Tu premio está en la puerta del fondo de la cantina. La contraseña es THX-1138."
+    $ jugarLabria = 3
+    menu:
+        "Cruzar la puerta.":
+            jump Trastienda
+        "Preguntar al camarero.":
+            "TBA. Yo no puedo hacer nada, la han alquilado."
+            "TBA. Bueno, no creo que te maten ahí dentro."
+        "Quedarse en la cantina.":
+            jump siguesEnCantina
+            $ jugarLabria = 3
+            
+    jump go_Cantina
+
+label hablarMonjes:
+    if hablarCazador == 0:
+        monje "Saludos, Herman[tuO]. ¿Has venido en busca de iluminación?"
+        monje2 "La iluminación es la comprensión holística de una situación. Te permitirá trascender en lo más profundo de tu propio ser, más allá de los hechos, hasta obtener cierto tipo de equilibrio."
+        monje "Una mente realmente iluminada está en paz con el cosmos y consigo misma, y ya no necesita las distracciones del mundo físico. Sin boca, no necesitas gritar."
+        monje2 "Si te sometes a años de dedicación y estudio de nuestros textos sagrados, y demuestras tu valía, entonces extraeremos tu cerebro y lo meteremos en un frasco."
+        playerName "Gracias, pero creo que eso no es lo mío."
+    elif hablarCazador == 1:
+        monje "Saludos, Herman[tuO]. ¿Has venido en busca de iluminación?"
+        monje2 "La iluminación es la comprensión holística de una situación..."
+        playerName "Bueno, mi comprensión de la situación es bastante más completa que antes."
+        playerName "Por ejemplo, ahora comprendo que estáis ocultando al fugitivo Guso Gaethgan en este edificio."
+        monje "¿Qué?"
+        playerName "De momento, nadie está enfadado con vosotros. Entregadme a Gaethgan y todo saldrá bien."
+        monje "Pero, ¿acaso no es cierto que la realidad es un mero complemento {i}a priori{/i} de una meta-ética no naturalista? Y si es así, ¿realmente está aquí tu fugitivo?"
+        playerName "No, eso no es cierto. Estás intentando recurrir a un imperativo categórico para mantener una posición ontológica solipsista que no se corresponde con los hechos, y además eres muy molesto."
+        monje2 "Oh, {i}poodoo{/i}. Déjalo, Frank, nos ha pillado."
+        monje "Pero..."
+        monje2 "Gaethgan nos amenazó con romper las peceras donde guardamos los cerebros los Hermanos más iluminados. Frank no quería colaborar porque esos Hermanos han trascendido las necesidades físicas..."
+        monje "¡Lo mantengo! ¡Y no son peceras, son frascos de nutrientes!"
+        monje2 "Si hubiesen trascendido tanto, no necesitarían nutrientes..."
+        "***SONIDO EXPLOSION Y TEMBLOR" with vpunch
+        "***SONIDO SPEEDER"
+        "Una explosión sacude el suelo y se oye el sonido de un vehículo repulsor."
+        monje2 "¡Gaethgan está escapando! Ha destrozado una puerta con el cañón de su swoop y se ha dado a la fuga."
+        playerName "¡Tengo que perseguirle!"
+        monje2 "¡Por favor, no lo hagas!{p}Gaethgan ha dejado una bomba que destruirá el palacio y nos matará a todos. Si la bomba deja de detectar su presencia, se activará."
+        monje2 "¿Podrías desactivarla?"
+        menu:
+            "Ayudar a los monjes.":
+		"SHOW BOMBA AT RIGHT, SONAR ALARMA***"
+                "El ominoso cláxon de una alarma de seguridad resuena en todo el palacio, instando a sus habitantes a dirigirse a las salidas."
+                "Entre bocinazos, los monjes te llevan hasta una bomba.***DESCRIPCIÓN BOMBA. El contador señala que quedan diez segundos. ¡Sólo hay tiempo para una decisión!"
+                menu:
+                    "Cortar el cable azul.":
+                        "Cortas el cable azul y... el contador se detiene.{p}Resoplas con alivio, y te da la impresión de que los monjes también han resoplado con alivio."
+                        monje2 "Gracias, foraster[tuO]. Has salvado nuestras vidas y nuestro templo."
+                        jump postBomba
+                    "Cortar el cable rojo.":
+                        "Cortas el cable rojo y... el contador se acelera. ¡Ahora va demasiado rápido para detenerlo! Llega a cero--"
+                        "EXPLOSIÓN TEMBLOR***" with vpunch
+                        "La bomba explota.***TBA Estás muert[tuO]."
+                        return
+                    "Que los monjes decidan qué cable cortar.":
+                        playerName "¡Chicos! Hay dos cables, rojo y azul. ¡Elegid uno!"
+                        monje "Pero aún si hubiese un sólo cable, la elección sería entre ese cable o ningún cable."
+                        monje2 "La única certeza es que no podemos tener ninguna certeza."
+                        monje "¿Pero es sabio quien renuncia a una certeza por una incertidumbre?"
+                        monje2 "Los textos sagrados mencionan la parábola del dragón que tuvo que elegir dónde sentarse. Entre dos taburetes, se sienta uno en el suelo."
+                        "***EXPLOSIÓN TEMBLOR." with vpunch
+                        stop sound
+                        "Los monjes han tardado demasido decidir y la bomba te ha explotado en la cara.***TBA Estás muert[tuO]."
+                        return
+                    "Otra opción.":
+                        "Tiras la bomba por la ventana y explota mientras hace caída libre hacia el mar de dunas."
+                        "***EXPLOSIÓN TEMBLOR." with hpunch
+                        stop sound
+                        "El suelo tiembla, las paredes se sacuden y abalorios variados caen por el suelo."
+                        "Una tonelada de arena ha elegido moverse en dirección al palacio de Jabba, y una buena cantidad de ella ha conseguido entrar por la misma ventana por la que tiraste la bomba."
+                        monje2 "Creo... que estamos vivos."
+                        monje "No se te ocurra dar gritos de alegría. Estás por encima de eso desde que has alcanzado la iluminación. No hagas que me enfade."
+                        monje2 "Gracias, foraster[tuO]. Has salvado nuestras vidas y nuestro templo."
+                        jump postBomba
+            "Huir del palacio.":
+                playerName "Salid corriendo de aquí."
+                monje "Te dije que este*** tip[tuO] no era de fiar."
+                "Uno de los monjes b'omarr grita a todos que huyan. Sales del palacio rodeado de arañas robóticas y personas relativamente calmadas."
+                "Hay gente que ha quedado atrás, gente que no puede escapar, pero es demasiado tarde para hacer algo por ellos."
+                "***EXPLOSIÓN TEMBLOR" with vpunch
+                stop sound
+                scene bg palacio jabba ext
+                show monje
+                show monje2 at right
+                "El estallido causa estragos y destroza una de las paredes principales, pero el palacio se mantiene en pie."
+                "Los monjes vuelven a caminar hacia el interior, como si no hubiera pasado nada."
+                "Quizá los rezagados*** estén bien. Quizá los monjes están entrando ahora para buscarles y ayudarles.{p}Sí, y quizá la especia extiende la vida, expande la consciencia y es vital para el viaje espacial."
+                $ asustasteBandido = 1
+                jump go_PalacioJabbaExt
+        jump postBomba
+    else:
+        monje "Saludos, Herman[tuO]. ¿Has venido en busca de iluminación?"
+        monje2 "La iluminación es la comprensión holística de una situación. Te permitirá trascender en lo más profundo de tu propio ser... Oh. Hola, [playerName]."
+        monje "Oh, eres tú otra vez."
+        monje "Ya te hemos dicho que lo sentimos. Gaethan nos amenazó con volar nuestro templo si no le permitíamos esconderse aquí."
+        playerName "Comprendo que estabais en una situación delicada."
+        monje "Si no te importa, tenemos mucho que hacer. El concepto del ser no va a trascenderse solo, ¿sabes?"
+    jump go_PalacioJabbaInt
+
+label postBomba:
+    # OYE, SE ACCEDE DESDE VARIOS SITIOS, YA ESTÁ BIEN. POR CIERTO, SÓLO AQUÍ 
+    monje "Gracias por ayudarnos con la bomba, [playerName]."
+    playerName "No podía hacer menos. Pero ahora, Gaethan ha escapado al Mar de Dunas. Me lleva demasiada ventaja. Va a ser difícil seguirle la pista."
+    monje "¿Tan importante es atraparle?"
+    playerName "Tengo que capturarle como sea... o estoy perdid[tuO]."
+    monje2 "Por favor, acompáñame un momento..."
+    scene bg palacio jabba ext
+    show monje
+    show monje2 at right
+    show montura at left
+    monje2 "Mira, nosotros tenemos una montura. Te la podemos prestar. ¿Sabes cabalgar estas criaturas?"
+    playerName "¡Un ***MONTURA! Por supuesto. ***INDICACION EXTRA DE ALGO SI ES EOPIE Y DISTINTO SI ES DEWBACK"
+    monje2 "Era de Frank, pero no creo que lo necesite."
+    monje "Adelante, llévatelo. Pero cuídalo bien."
+    playerName "Lo usaré sólo en el Mar de Dunas y os devolveré cuando pase por aquí de vuelta. No es buena idea ir montado por la ciudad y por muchos otros lugares."
+    monje "Buen viaje."
+    monje2 "¡Pásate a saludar de vez en cuando!"
+    monje "No le des ideas."
+    $ asustasteBandido = 1
+    jump go_PalacioJabbaExt
+
+label hablarTuskens:
+    # AUNQUE NO HABLES CON ELLOS, CUENTA COMO QUE LO HAS HECHO; NO VOLVERÁS A HABLAR CON TUSKEN JOE.
+    $ hablarTuskens = 1
+    show tusken
+    show bantha at left
+    show tusken2 at right
+    "***Descripción lugar, primera vez que lo ves. Mt: Hay una banda de moradores de las arenas, o bandidos tusken."
+    "Aunque son nómadas, esto no es un asentamiento. No hay niños, ancianos o reservistas: Sólo guerreros armados y preparándose. Esto es un campamento militar de una noche. Mañana batallarán."
+    "Los moradores forman bandas de hasta 30 personas, pero aquí unas 50 personas. Llevan ropas son de materiales distintos; eso sugiere que son varios tribus. ¿Será una guerra civil?"
+    "¿Y por qué hay tan pocos banthas? ¿Menos de 20? Un tusken rara vez se aleja de su fiel montura. Si el bantha muere, el tusken vaga solo por el desierto hasta encontrar otro bantha o morir."
+    "Los moradores de las arenas son agresivos y peligrosos, pero tú conoces su idioma y sus costumbres. Lo que sea que esté pasando parece fascinante para un xenobiólogo."
+    menu:
+        "Hablemos con los tuskens.":
+            "Te acercas a un grupo de tuskens con cuidado y las manos a la vista."
+            playerName "{i}Aargh. Ru rah ru rah.{/i}{p}Saludos. Vengo en paz."
+            moradores "{i}Kterskt! Orukak! Urrak!{/i}{p}¡Peligro! ¡Arriba las manos! ¡No te muevas!"
+            "Extiendes una cantimplora hacia ellos, siguiendo un ritual que ha salido bien en el pasado... o eso has leído."
+            playerName "{i}Orukak argg yurag.{/i}{p}¿Os apetece beber?"
+            "Uno de los tusken coge tu cantimplora con cuidado mientras el otro te encañona con un rifle. Aquél confirma que hay valiosa agua en el recipiente, y discuten entre ellos."
+            moradores "Él/Ella*** no es el enemigo asignado. No es jawa. No es granjero. No es {i}kterskt{/i}. ¿{i}Ootmian{/i}***?"
+            moradores "El cacique lo sabrá. Llevémosle ante el cacique."
+            hide tusken with dissolve
+            hide tusken2 with dissolve
+            hide bantha2 with dissolve
+            "***PAUSA 2 segundos; quizá otro decorado"
+            show tusken with dissolve
+            joe "¡Yo soy GRu'uu'h'rRr, cacique de KRsuuRu''ou! ¿Quién eres y qué buscas?"
+            playerName "Yo soy [playerName], xenobiólog[tuO]."
+            joe "¿Qué significan tus palabras misteriosas?"
+            playerName "Soy {p=5}narrador***NARRADORA. Vengo de una tierra lejana y quiero narrar las proezas y logros de KRsuuRu''ou."
+            joe "¿Buscas sabiduría que usar en guerra contra KRsuuRu''ou? ¿Buscas nuestras tácticas militares secretas? ¡Eres osad[tuO]!"
+            playerName "¡No! Quiero entenderos, aprender de vosotros, usar vuestra sabiduría contra nuestros enemigos. No tengo disputa contra KRsuuRu''ou ni contra los moradores. Saber más nos puede hacer más fuertes a ambos."
+            joe "¡Eso es un disparate! Si uno se hace más fuerte, entonces otro se hace más débil. No hay suficiente fuerza para todos, igual que no hay suficiente agua para todos."
+            joe "Pero GRu'uu'h'rRr es fuerte, KRsuuRu''ou no te teme, y es cierto que las tribus se alían a veces. ¡Estamos aliados ahora con Lt'RukRrrRu y Ogrurr'rrs'akar!"
+            playerName "Entonces este campamento no contiene una tribu grande sino varias tribus aliadas. ¿Qué ha unido a tres tribus?"
+            joe "¡El desastre! ¡Cada tribu ha perdido a la mitad de su gente! Poderosos guerreros desaparecidos. ¡Mi padre, el Gran Cacique, desaparecido!"
+            joe "¡Y los banthas! ¡Ay, los banthas! Masacrados por docenas, mutilados, destripados. ¡Su sangre empapa las arenas! ¡Hay más pedazos de bantha que curvas en el Mar de Dunas!"
+            joe "Ahora hablo como mi hermano; pero me conmociona porque yo mismo he perdido a mi montura, Slalraa... Igual que la mitad de mis bravos..."
+            playerName "(Éste es el peor momento para recordarle que debería vagar por el desierto hasta morir; como se lo diga, él o ella me mata)."
+            joe "¡Yo, GRu'uu'h'rRr, he tenido una visión!"
+            playerName "(Poodoo, qué sobresalto)."
+            joe "Es una prueba de los espíritus. Si todos los tusken sin bantha en la tribu KRsuuRu''ou partiesen en solitario en busca de una visión, la tribu KRsuuRu''ou no sobreviviría."
+            joe "En vez de eso, la tribu KRsuuRu''ou irá a la guerra contra los responsables, y demostrará su resiliencia asociándose con otras tribus en un aprieto similar."
+            playerName "¿Quiénes son los responsables de vuestro problema, oh, GRu'uu'h'rRr?"
+            joe "Las tribus gemelas Q'Hurc y Q'Thac acusan a los granjeros de humedad, pero sus mentes son pequeñas como moscas de la arena: Granjeros y comerciantes nunca habían sido tan audaces."
+            joe "¡Los auténticos culpables son los jawas! ¡Los espíritus nos ponen a prueba y, cuando venzamos a los malolientes jawas, nuestros banthas volverán!"
+            menu:
+                "¿Tienes pruebas contra los jawa?":
+                    playerName "¿Tienes pruebas que demuestren que han sido los jawa?"
+                    joe "No hay pruebas, pero tampoco hay más sospechosos. ¿Quién va a atacar a los poderos moradores de las arenas?"
+                    joe "Mi padre, el Gran Cacique, habló de un tiempo en que los hutts nos desafiaron; pero Jabba el Hutt está ahora muerto."
+                    joe "Sólo los jawas, en sus monstruosos reptadores y usando su tek-no-jía del infierno, tienen el poder para atacarnos."
+                    menu:
+                        "Quizá debas pensártelo más antes de ir a por los jawas.":
+                            playerName "Tal vez no han sido los jawas. Tal vez alguien intenta incriminarlos."
+                            playerName "Pensar antes de actuar puede ser sabio."
+                            joe "¡Herejía! ¡Pensar antes de actuar te hace débil, y te lo demostraré!"
+                            "GRu'uu'h'rRr te atraviesa con su gaderfii.***"
+                            return
+                        "Pedir el estandarte." if primerWassak == 1:
+                            playerName "Yo podría negociar una tregua. ¿Y si me dieses el estandarte de tu gente?"
+                            joe "¿Qué es esta afronta? ¡Tu osadía no conoce límites, pero tu tiempo los conocerá!"
+                            "GRu'uu'h'rRr te atraviesa con su gaderfii.***"
+                            return
+                        "Desearle buena suerte.":
+                            "Te desea buena suerte y que te vayas."
+                            joe "{i}Koroght gaghgt Takt{/u} Bendita sea tu partida de entre nosotros. (OUTLANDER Nº 1***CHECK)"
+                            playerName "(Eso ha sido una despedida tradicional. Es el momento de partir)."
+                            jump go_ZonaTusken1
+                "Pedir el estandarte." if primerWassak == 1:
+                    playerName "Yo podría negociar una tregua. ¿Y si me dieses el estandarte de tu gente?"
+                    joe "¿Qué es esta afronta? ¡Tu osadía no conoce límites, pero tu tiempo los conocerá!"
+                    "GRu'uu'h'rRr te atraviesa con su gaderfii.***"
+                    return
+                "Desearle buena suerte.":
+                    playerName "Que los espíritus te iluminen en tu campaña."
+                    joe "{i}Koroght gaghgt Takt{/u} Bendita sea tu partida de entre nosotros. (OUTLANDER Nº 1***CHECK)"
+                    playerName "(Eso ha sido una despedida tradicional. Es el momento de partir)."
+                    jump go_ZonaTusken1
+        "Qué gran momento para ir a otro sitio.":
+            "Asustado, te alejas de la zona sin que los moradores de las arenas te vean. {p} O, al menos, no acusan tu presencia."
+            jump go_ZonaTusken1
+
+
+
+label hablarBob:
+
+    show bob
+    show bantha at left
+
+    if hablarBob == 0:
+
+        "Llegas a una zona del desierto con lo que parecen ser huellas de un único bantha; aunque sabes bien que los moradores caminan en hilera para ocultar su número."
+        "***MÚSICA ÉTNICA"
+        "Encuentras, en lo alto de una duna, a un morador solitario, junto a su montura. Toca un instrumento musical de madera con las manos y a la vez canta un triste son. El bantha mueve la cola al compás."
+        "El morador se fija en ti y te hace un gesto amistoso para que te acerques."
+        bob "{i}Eyaak urk urk.{/i} No quiero hacerte daño. Yo soy UOu'uu'h'rRr, de la tribu KRsuuRu''ou."
+        playerName "Yo soy [playerName], xenobiólog[tuO]."
+        bob "¡Ah, un/una*** sabio/a*** entre tu gente. Apreciaré tu compañía. Yo ansiaba ser el narrador de mi tribu, pero los espíritus no querían eso para mí. Ansío descubrir qué quieren los espíritus para mí, y quizá tu sabiduría me lo explique."
+        playerName "Te escucho."
+        bob "El hijo mayor del Gran Cacique suele ser firme candidato a heredar la tribu. Cuando el Gran Cacique desapareció misteriosamente hace dos lunas, el hijo menor tomó el mando."
+        playerName "¿Por qué sucedió esto?"
+        bob "Porque el primogénito era aún un niño y el benjamín ya era un adulto. Éste había pasado ya el Rito de Pasaje, venciendo a un poderoso wraid. El narrador había añadido su proeza a la historia tribal. El chamán le apoyó. Los guerreros le aclamaron."
+        bob "El primogénito había creído que su padre iba a vivir muchas más estaciones y no se había molestado en hacerse adulto. Había dedicado su tiempo a cultivar su mente y aprender melodías."
+        bob "El nuevo cacique acusó a los jawas de la desaparición de su padre y de muchos otros tusken. Acusó a los jawas de haber desollado banthas en el desierto. Acusó a los jawas de intentar destruirnos, y partió a la guerra contra ellos."
+        bob "Los jawas tienen fortalezas con ruedas que ninguna tribu en solitario puede conquistar. Por eso, el nuevo cacique se asoció con otras tribus para poder atacarles."
+        playerName "Dime, docto UOu'uu'h'rRr, ¿fueron los jawas quienes mataron banthas e hicieron desaparecer tuskens?
+        bob "Nadie sabe eso con certeza, [playerName]. Otras tribus acusan a los granjeros de humedad."
+        playerName "¿Y qué piensa el hijo mayor del Gran Cacique?"
+        bob "El primogénito piensa que el culpable aún no se ha revelado, y desearía descubrir quién está detrás de nuestras desdichas. Si se descubriera una verdad así, él guiaría a la tribu KRsuuRu''ou contra su auténtico enemigo."
+        bob "¿Pero a quién le importa lo que piense un niño?"
+        playerName "¿Y si el primogénito del Gran Cacique dejase de ser un niño?"
+        bob "Épico tendría que ser el Rito de Pasaje del primogénito para impresionar a la tribu KRsuuRu''ou. El nuevo cacique se hizo adulto cazando un wraid. El primogénito tendría que cazar una bestia aún más temible. ¿Existe tal bestia en Tatooine?"
+        playerName "Sólo hay una bestia más terrible que el wraid en las arenas, y es el dragón krayt.{p}¿Desafiaría el primogénito del Gran Cacique a un dragón krayt?"
+        bob "Si él encontrase un dragón krayt en los desiertos y cañones, entonces el primogénito le extraería la perla ventral con su gaderfii, ¡con este gaderfii forjado de metal de cohete!"
+        "UOu'uu'h'rRr sostiene su arma sobre su cabeza, alzándola con ambas manos y agitándola."
+        bob "Ojalá el primogénito supiera dónde encontrar un dragón krayt para vencerlo y demostrar su fuerza a su hermano menor; y ojalá el primogénito supiera quién destruye las tribus tusken."
+        playerName "Los espíritus no han terminado de dirigirse a ti, UOu'uu'h'rRr. Tu odisea acaba de empezar."
+        $ hablarBob = 1
+
+    if dragon == 1 and hablarBob == 1:
+        playerName "Algo debes saber, UOu'uu'h'rRr. En mis viajes, he encontrado un dragón krayt. Es grande, es poderoso y no está lejos de aquí. Si alguien pasase por esa zona, podría obtener prestigio político."
+        "UOu'uu'h'rRr se levanta, ansioso y armado. Se acerca a ti con paso firme y decidido, y te apunta con el extremo picudo de su gaderfii."
+        bob "Estoy dispuesto a desmembrarte hasta que me digas cómo llegar a este dragón."
+        "Con educación y cuidado, empujas el gaderfii a un lado para que no te pinche."
+        playerName "Yo quiero que tú sepas cómo llegar hasta ese dragón."
+        playerName "Ve hasta el Palacio de Jabba y ve hacia la ***JAG CRAG GORGE***. La guarida del dragón está en el cañón."
+        "UOu'uu'h'rRr, eufórico, agita su gaderfii sobre la cabeza."
+        bob "¡Se compondrán canciones sobre la victoria de UOu'uu'h'rRr en el día de hoy!"
+        "UOu'uu'h'rRr se monta sobre su bantha de un salto que parece muy difícil y doloroso, y se prepara para marchar."
+        bob "Antes de irme, tengo una pregunta para ti, [playerName]."
+        playerName "Dime, UOu'uu'h'rRr."
+        bob "¿Qué o quién es ese prestigio político del que hablabas?"
+        playerName "Significa que puedes ser el cacique de tu tribu."
+        hide bob with dissolve
+        hide bantha with dissolve
+        playerName "Bueno, he {i}cometido{/i} la buena acción del día. ¿Qué más toca hacer?"
+        playerName "Desde luego aquí no hay nada que hacer. Voy a volver a Jundlandia, intentando seguir el rastro de UOu'uu'h'rRr."
+        scene bg zona tusken 1
+        playerName "Qué rápido cabalga; ya le he perdido de vista."
+        "TBA. Diálogo de que estás en la otra zona, intentando seguir a Bob."
+        $ dragon = 2
+        jump ZonaTusken1
+
+    elif itemCabezaDroide == 1 and hablarBob == 1 and dragon == 2:
+        playerName "Tengo algo para ti, oh, Cacique."
+        "Le enseñas la cabeza del droide obtenida en Mos Gamos. Activas un holograma que muestra a los moradores encerrados."
+        "TUSKEN AMARILLO AT LEFT, DESPUÉS HIDE CON DISSOLVE***"
+        bob "Esto es la tek-no-jía del infierno."
+        playerName "¡Desde luego que lo es! Quien ha hecho esto no puede ser menos que diabólico."
+        playerName "Han encerrado a tus hermanos y hermanas para sacarlos del planeta y usarlos como gladiadores y carne de cañón, para que mueran por el placer de otros."
+        "***WEEEQ AMARILLO AT LEFT, DESPUÉS HIDE CON DISSOLVE"
+        playerName "Han matado a vuestros banthas porque sus guardias tienen tradiciones aún más brutales y sangrienta que las vu... Bueno, muy brutales y sangrientas."
+        playerName "Han acusado a los jawas porque no tienen el honor de una tribu de valientes guerreros y se esconden detrás de inocentes."
+        bob "Me resulta difícil creer que haya gente tan horrible."
+        playerName "Tú no conoces mi universo, amigo UOu'uu'h'rRr. Para mí, esto no es extraordinario."
+        bob "¿Quién es el general al que me enfrento, [playerName]? ¿Quién es el jefe de la tribu enemiga?"
+        "***IMAGEN CRIMELORD1 AMARILLO AT LEFT, DESPUÉS HIDE CON DISSOLVE"
+        playerName "Se llama ***CRIMELORD1 y sólo le motiva la codicia."
+        bob "Su gente se oculta en las ruinas de Mos Gamos."
+        playerName "¿Cómo sabes eso?"
+        bob "He reconocido las montañas y las tiendas-cuadradas-de-dormir. Sus defensas son malas porque sólo protegen en el camino hacia las granjas de humedad."
+        bob "Mis cincuenta guerreros les flanquearán en las otras direcciones. Las tiendas-cuadradas-de-dormir nos darán cobertura contra sus armas bláster."
+        playerName "Veo que UOu'uu'h'rRr es un astuto general."
+        bob "Sólo lo será hasta que su padre el Cacique sea liberado y retome el mando. Quizá así su primogénito pueda ser narrador."
+        bob "Gane o pierda UOu'uu'h'rRr hoy, la tribu KRsuuRu''ou está en deuda contigo, [playerName]. Tu nombre entrará en nuestra historia."
+        playerName "Quizá ha llegado el momento de olvidar la rencilla contra los jawas."
+        bob "¡Sí! El nuevo enemigo es el culpable!"
+        bob "Cuando las tribus gemelas Q'Hurc y Q'Thac vean el mensaje, dejarán de atacar a los granjeros y apoyarán mi campaña contra ***Crimelord1."
+        bob "El Cacique de KRsuuRu''ou pide una gracia aL SABIO*** [playerName], para poder dedicar su esfuerzo a la guerra."
+        bob "Ten el estandarte de nuestra guerra contra los jawas. Dáselo a los jawas para que lo destruyan, representando la destrucción del conflicto, y dales el respeto de UOu'uu'h'rRr."
+        "Recibes estandarte tusken.***"
+        "Con estas palabras, UOu'uu'h'rRr  sube una vez más a su bantha y se aleja hacia el doble sol poniente."
+        $ itemCabezaDroide = 2
+        $ crimelord1Activo = 2
+        $ itemEstandarte = 1
+
+    elif itemCabezaDroide == 1 and hablarBob == 1 and dragon < 2:
+        playerName "Tengo algo para ti, UOu'uu'h'rRr."
+        "Le enseñas la cabeza del droide obtenida en Mos Gamos. Activas un holograma que muestra a los moradores encerrados."
+        "TUSKEN AMARILLO AT LEFT, DESPUÉS HIDE CON DISSOLVE***"
+        bob "Esto es la tek-no-jía del infierno."
+        playerName "¡Desde luego que lo es! Quien ha hecho esto no puede ser menos que diabólico."
+        playerName "Han encerrado a tus hermanos y hermanas para sacarlos del planeta y usarlos como gladiadores y carne de cañón, para que mueran por el placer de otros."
+        "***WEEEQ AMARILLO AT LEFT, DESPUÉS HIDE CON DISSOLVE"
+        playerName "Han matado a vuestros banthas porque sus guardias tienen tradiciones aún más brutales y sangrienta que las vu... Bueno, muy brutales y sangrientas."
+        playerName "Han acusado a los jawas porque no tienen el honor de una tribu de valientes guerreros y se esconden detrás de inocentes."
+        bob "Me resulta difícil creer que haya gente tan horrible."
+        playerName "Tú no conoces mi universo, amigo UOu'uu'h'rRr. Para mí, esto no es extraordinario."
+        bob "¿Quién es su general, [playerName]? ¿Quién es el jefe de la tribu enemiga?"
+        "***IMAGEN CRIMELORD1 AMARILLO AT LEFT, DESPUÉS HIDE CON DISSOLVE"
+        playerName "Se llama ***CRIMELORD1 y sólo le motiva la codicia."
+        bob "Su gente se oculta en las ruinas de Mos Gamos."
+        playerName "¿Cómo sabes eso?"
+        bob "He reconocido las montañas y las tiendas-cuadradas-de-dormir. Sus defensas son malas porque sólo protegen en el camino hacia las granjas de humedad."
+        bob "Cincuenta guerreros pueden flanquearlas en las otras direcciones. Las tiendas-cuadradas-de-dormir pueden darnos cobertura contra sus armas bláster."
+        playerName "Veo que UOu'uu'h'rRr es un astuto general."
+        bob "¡Ojalá pudiera serlo! Mi tribu no me seguirá. Tienen un cacique poderoso, agresivo y decidido a atacar a los jawas."
+        bob "Si hubiese una forma de enfrentar una presa comparable a un wraid, si el hijo mayor hubiese superado la Ruta de Pasaje, el nuevo Cacique dejaría paso a su hermano."
+        bob "Pero todo eso son fantasías hasta que se encuentre una solución.***"
+        bob "Agradezco que me muestres la verdad. Hoy, la verdad aún no basta para resolver el dilema."
+        playerName "El día aún no ha terminado. Quédate la cabeza de droide. Pronto la necesitarás para convencer a tu gente."
+        $ itemCabezaDroide = 2
+        $ cabezaAntesQueDragon = 1
+
+    elif dragon == 1 and hablarBob == 1 and cabezaAntesQueDragon == 1:
+        playerName "Algo debes saber, UOu'uu'h'rRr. En mis viajes, he encontrado un dragón krayt. Es grande, es poderoso y no está lejos de aquí. Si alguien pasase por esa zona, podría obtener prestigio político."
+        "UOu'uu'h'rRr se levanta, ansioso y armado. Se acerca a ti con paso firme y decidido, y te apunta con el extremo picudo de su gaderfii."
+        bob "Estoy dispuesto a desmembrarte hasta que me digas cómo llegar a este dragón."
+        "Con educación y cuidado, empujas el gaderfii a un lado para que no te pinche."
+        playerName "Yo quiero que tú sepas cómo llegar hasta ese dragón."
+        playerName "Ve hasta el Palacio de Jabba y ve hacia la ***JAG CRAG GORGE. La guarida del dragón está en el cañón."
+        "UOu'uu'h'rRr, eufórico, agita su gaderfii sobre la cabeza."
+        bob "¡Se compondrán canciones sobre la victoria de UOu'uu'h'rRr en el día de hoy!"
+        "UOu'uu'h'rRr se monta sobre su bantha de un salto que parece muy difícil y doloroso, y se prepara para marchar."
+        bob "Antes de irme, tengo una pregunta para ti, [playerName]."
+        playerName "Dime, UOu'uu'h'rRr."
+        bob "¿Qué o quién es ese prestigio político del que hablabas?"
+        playerName "Significa que puedes ser el cacique de tu tribu."
+        bob "[playerName], ¿comprendes lo que significa mi partida hoy?"
+        bob "Primero venceré al dragón y después, cuando su sangre esté aún húmeda y caliente sobre mis vestiduras, iré con mi tribu, tomaré el mando, ¡y atacaremos Mos Gamos!"
+        bob "Gane o pierda UOu'uu'h'rRr hoy, la tribu KRsuuRu''ou está en deuda contigo, [playerName]. Tu nombre entrará en nuestra historia."
+        playerName "Quizá ha llegado el momento de olvidar la rencilla contra los jawas."
+        bob "¡Sí! El nuevo enemigo es el culpable!"
+        bob "Cuando las tribus gemelas Q'Hurc y Q'Thac vean el mensaje, dejarán de atacar a los granjeros y apoyarán mi campaña contra ***Crimelord1."
+        bob "El Cacique de KRsuuRu''ou pide una gracia aL SABIO*** [playerName], para poder dedicar su esfuerzo a la guerra."
+        bob "Ten el estandarte de nuestra guerra contra los jawas. Dáselo a los jawas para que lo destruyan, representando la destrucción del conflicto, y dales el respeto de UOu'uu'h'rRr."
+        playerName "¿No debería esperar a que me confirmes que todo ha ido bien?"
+        bob "¿Acaso tú no entiendes la cultura tusken? Nosotros no hacemos las cosas así."
+        "Recibes estandarte tusken.***"
+        "Con estas palabras, UOu'uu'h'rRr. sube una vez más a su bantha y se aleja hacia el doble sol poniente."
+        hide bob with dissolve
+        hide bantha with dissolve
+        playerName "Bueno, he {i}cometido{/i} la buena acción del día. ¿Qué más toca hacer?"
+        playerName "Desde luego aquí no hay nada que hacer. Voy a volver a Jundlandia, intentando seguir el rastro de UOu'uu'h'rRr."
+        scene bg zona tusken 1
+        playerName "Qué rápido cabalga; ya le he perdido de vista."
+        "TBA. Diálogo de que estás en la otra zona, intentando seguir a Bob."
+        $ dragon = 2
+        $ crimelord1Activo = 2
+        $ itemEstandarte = 1
+        jump ZonaTusken1
+
+
+    else:
+        playerName "Hola, UOu'uu'h'rRr. ¿Cómo van tus esfuerzos?"
+        bob "Mis responsabilidades son intensas y la mera supervivencia en el desierto es ardua. Sólo los fuertes sobrevivimos, y sólo los elegidos triunfaremos."
+        playerName "Puedes contar con mi apoyo si lo necesitas."
+        bob "No lo entiendo. ¿Por qué iba yo a necesitar tu apoyo? ¿Acaso no soy fuerte y poderoso como corresponde a un morador de las arenas?"
+        playerName "Tienes razón. Estoy segur[tuO] de que prevalecerás."
+        bob "Yo no tengo esa certeza sobre ti, [playerName]. Tú eres débil e insignificante."
+        
+    playerName "Que los espíritus te iluminen."
+    joe "{i}Koroght gaghgt Takt{/u} Bendita sea tu partida de entre nosotros. (OUTLANDER Nº 1***CHECK)"
+    playerName "(Eso ha sido una despedida tradicional. Es el momento de partir)."
+    # "***No te preocupes: Si Bob se está yendo para ir al dragón, hay un JUMP y no pasas por aquí después de haberle ocultado."
+    
+    jump go_ZonaTusken2

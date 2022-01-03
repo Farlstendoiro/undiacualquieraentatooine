@@ -1,0 +1,173 @@
+﻿# opening
+
+label alInicio:
+
+# introduce el nombre del personaje
+# (Strip sólo elimina los espacios, no puntos y cosas raras)
+
+    scene bg inicio
+    show jako
+
+    "Conozco unos cuantos idiotas que se han ido a Sisar a importar agua, pero es carísimo adaptar las naves y hay que purificarla antes de la entrega. El retorno de inversión es alto; por eso yo seguí en Ororo."
+    jako "Hola. Soy J4-KO, tu droide asignado."
+    "(tú)" "Así que K.O..."
+    jako "Puedes llamarme Jako."
+
+    # introduce el nombre del personaje
+    # (Strip sólo elimina los espacios, no puntos y cosas raras)
+
+    $ playerName = renpy.input("¿Cómo debo llamarte?","Farlstendoiro")
+
+    if playerName == "Jako":
+        jako "No, hay una confusión. {b}Yo{b} soy Jako."
+        $ playerName = ""
+
+    while playerName == "":
+        $ playerName = renpy.input("Error: Introduce tu nombre, por favor.","Farlstendoiro")
+
+    jump eligeTuAspecto
+
+label eligeTuAspecto:
+
+    $ playerName  = playerName.strip()
+
+    jako "Encantado de conocerte, [playerName]."
+
+    # introduce tu aspecto
+
+    jako "TBA, por favor elige tu aspecto."
+
+    window hide None
+#   TBA IMPORTANTE: ELEGIR CABEZAS. NO ESTÁ HECHO.
+    $ tuAspecto = 1
+# DE MOMENTO: 1 VARÓN HUMANO. 2 MUJER HUMANA. 3 VARÓN MONCAL. 4 MUJER TWI'LEK 
+#    $ tuAspecto = renpy.imagemap("choosechar_ground.png","choosechar_hover.png",[(468,94, 683,290, 1), (468,382, 683,577 ,2), (853,94, 1068,290 ,3), (853,382, 1068,577 ,4)])
+
+    if tuAspecto < 1:
+        $ tuAspecto = 1
+    elif tuAspecto > 4:
+        $ tuAspecto = 1
+        
+    # Aquí los determinantes:
+    if tuAspecto == 1 or tuAspecto == 3:
+        $ tuEl = "el"
+        $ tuUn = "un"
+        $ tuO = "o"
+        $ tuPronombre = "él"
+        $ tuPronombreMayus = "Él"
+        $ tuEmpollon = "empollón"
+    else:
+        $ tuEl = "la"
+        $ tuUn = "una"
+        $ tuO = "a"
+        $ tuPronombre = "ella"
+        $ tuPronombreMayus = "Ella"
+        $ tuEmpollon = "empollona"
+        
+    if tuAspecto < 3:
+        $ tuEspecie = "humano"
+    elif tuAspecto == 3:
+        $ tuEspecie = "calamariano"
+    else:
+        $ tuEspecie = "twi'lek"
+        
+    # introduce el nombre de TU NAVE
+    # (Strip sólo elimina los espacios, no puntos y cosas raras)
+
+    scene bg tunave
+    show jako
+    $ tuNave = renpy.input("¿Y cómo quieres llamar a la nave?","Shantipole")
+
+    if tuNave == "Tormenta de Melocotón" or tuNave == "Halcón Milenario" or tuNave == "Esclavo I":
+        jako "Ese nombre ya está registrado. Por favor, elige otro."
+        $ tuNave = ""
+
+    while tuNave == "":
+        $ tuNave = renpy.input("Error: Introduce el nombre de la nave.","Shantipole")
+        
+    $ tuNave  = tuNave.strip()
+    jako "Nombre registrado de la nave: [tuNave]."
+
+    jump personajeDefinido
+
+label personajeDefinido:
+
+# finca Sedi Fisk Mensaje
+# Calles Mos mensaje
+# Cantina mensaje
+# hangar mensaje
+
+    "TBA. Escena espacial."
+
+    scene bg sedi fisk
+    with dissolve
+    "TBA. Estás en La Finca de Sedi Fisk, infestada de ratas womp. Fisk abandonó su finca hace mucho sin decir nada a nadie."
+    "TBA. Recibes un mensaje-droide TBA que te dice que vuelvas de inmediato, te necesitan en casa."
+    "TBA. Vas a ciudad Mos. No han abierto spaceport así que tomas una copa en un bar."
+
+    scene bg cantina
+    show kabe at left
+    show camarero
+
+    "TBA. Hay camarero y Kabe."
+    "TBA. Saludas al alien reconociendo algo raro de su especie, a poder ser un insectoide."
+    "TBA. Esta es la Taberna de la Duquesa que Ríe. Yo soy la Duquesa"
+    "TBA. Oí de un kallidahin en el sector, un arqueólogo de éxito, Nogugny Kriill. (Detallar Proeza). Él: No tengo ni idea de qué me hablas."
+    "TBA. Le explicas que vienes a investigar womprats. Con lo que saques, una empresa médica o algo podría encontrar un repelente, o darles un uso comercial y mejorar la economía local."
+    "TBA. Hablas con ellos. Hora de ir al hangar."
+
+    scene bg hangar
+    with fade
+    show funcionario
+    show stormtrooper at left
+
+    "TBA. Cuando vas al hangar, te dicen que no puedes pasar."
+    "TBA. Necesitas para salir del planeta: enumerar lista"
+    "TBA. Una pieza de la nave que está estropeada ('Oscilador de cristal' de momento)"
+    "TBA. Las autoridades han traspapelado tus permisos aprobados, así que no tienes permiso para irte ('Permiso de despegue')"
+    "TBA. Aclarar la investigación sobre contrabando en una nave considerada la tuya; está oficialmente varada ('Investigación cerrada')"
+    "TBA. (Esto es: Con el Permiso, tú podrías irte; pero la nave, el droide y el equipaje se quedan)."
+    "TBA. (Tienes ya varias ratas womp de diversos tipos en la bodega, y no las puedes dejar ahí)."
+
+    "TBA. Veamos qué llevas encima: Algo de dinero y un datapad con declaraciones de unas cuantas personas a las que entrevistaste estos últimos días."
+
+    
+    while varComodin == 0:
+        menu:
+            "TBA. Ver declaración de Boggs.":
+                "TBA. Declaración de Boggs."
+# Wenny Boggs had gone farther into the desert The corridor of rock emptied into a hollow circle sur- than he had planned. He was still stalking the elusive rounded by high walls of stone. In the center of the herd of Womp Rats when he realized where he was circle was a flat stone platform, ringed by stacks of and how low Tatooine's twin suns were hanging in the painted rocks, rising as totems to ancient, unknown sky. It would be safer to camp than to cross kilometers gods. And there was the singer, bending over a figure of vacant sand in the dark; Tatooine's night belongs that rested on the flat stone. It was a Tusken Raider, to the Sand People. He certainly didn’t want to con- one of the fearsome Sand People, and he sang not in front a hunting party made up of those fearsome be- the rough, growling voice of his kind, but in a sweet, ings. He turned his landspeeder toward a rise of rocky sad, lilting one, unhampered by the breathing filter his hills, in search of a defendable spot to wait out the folk always wore. night. This Raider had removed his filter, but Wenny could
+# The cranny wasn't roomy or comfortable, but it pro- not get a clear look at the creature under the bandages. vided protection. With a blaster rifle at his side and He was transfixed by the Raider's song, strangely a hunk of SoroSuub Insta-Meal to munch on, Wenny melancholy and dreamy, not harsh and frightening as settled in. Wenny would have imagined. But then again, he had Sleep eventually claimed the youth, no matter how never imagined that Sand People would, or even could, much he tried to fight it. The darkness of the desert sing! and the gentle sounds of the night combined to lull The figure on the platform looked old and weak. As Wenny into a light doze. Then the singing started and Wenny watched, the aged one reached out and grasped Wenny woke with a start. The song he heard had been the singer's hand. He whispered words into the ear of hauntingly sad, but the night was now quiet. Could he the youth, then his hand fell away and he died. have dreamed it? For a long moment everything was quiet. The song.
+# Again he heard it, the sound echoing from over the had stopped as abruptly as the old one's life. The young jagged peaks at his back. It was a somber, wistful chant Raider, wrapped in tattered robes and swaddled cloth, that captivated the young farmer. Wenny decided he his breathing filter and helmet at his side, rocked back had to see the singer. Slinging his rifle across his back, and forth as he stared down at his expired comrade. he climbed over the rocks to have a look. Then he began to wail, his anguish shattering the night Below was a narrow canyon that winded into the tall and echoing through the canyon.
+# Somewhere, a million crags. A single Bantha waited at the canyon’s mouth, kilometers away, the Bantha’s cry joined its master’s. riderless but equipped with packs and pouches that Wenny bowed his head. He never imagined the Sand clearly belonged to a Tusken Raider. No one was in People — the Tusken Raiders — as feelingful, emotional sight, but the song continued, pulling at him, dragg- beings. He wiped his eyes and gave a final nod to the ing him into the crags. Wenny could offer no resistance. old one, then quietly returned to his nook to await the Tatooine dawn.
+            "TBA. Ver declaración de Thok.":
+                "TBA. Declaración de Thok."
+            "Ver declaración de Wassak.":
+                hide all "***EXISTE ESTO?"
+                show wassak amarillo
+                wassak "M'um m'aloo. Yo, Wassak. Oye, ¿cuánto pides por el grabador?"
+                wassak "¿No lo vendes? Oh. ¿Y si te ofrezco unos macrobinoculares y un par de medpacs casi sin estrenar?"
+                wassak "(Sigh) Yo, Wassak, del clan Nkik."
+                wassak "Paso mucho tiempo en el desierto, buscando tesoros. He visto muchas ratas womp. Tengo incluso un bláster para protegerme."
+                "Wassak levanta sus manos mostrando los dedos."
+                wassak "Hace diez veces dos días, más porcentaje de propina, yo me fijé en una pieza de tecnología medio enterrada en una duna."
+                wassak "Eran los restos un probot Víbora de Arakyd. Roto, inoperativo, echando chispas, apagado. ¡Yo tenía que echar mano de ese tesoro!"
+                wassak "Por supuesto para devolvérselo a sus legítimos propietarios, las autoridades imperiales. Ésa era mi motivación."
+                wassak "Mientras yo iba hacia allí, la arena escupió cuatro ratas womp. corrieron hacia mí y me atacaron. ¡Intentaban impedirme llegar al droide!"
+                wassak "Dos de ellas rodearon el armazón del droide para arrastrarlo mientras las otras se me acercaban. Nunca había visto tanta coordinación en ratas."
+                wassak "Vi que las que iban a por mí tenían una mirada muy inteligente, ¡y pulgares! Las ratas womp no tienen pulgares."
+                wassak "Antes de tenerlas cerca, yo saqué mi bláster. Las ratas se detuvieron, como si supieran que ese objeto cambiaba las reglas del juego."
+                wassak "Una de las ratas cercanas me atacó. Le disparé a quemarropa y la maté. La otra rata cercana se detuvo y silbó. ¡Silbó!"
+                wassak "Las ratas del fondo dejaron de arrastrar al droide y las tres fueron donde su colega caído."
+                wassak "A partir de ese momento, ignoraron al droide, recogieron el cadáver y se retiraron. Yo estaba demasiado sorprendido para detenerles."
+                wassak "Cuando ya no las vi, recogí el droide sonda. Lo desmonté y... lo devolví en la Oficina Imperial."
+                $ visteDeclaracionWassak = 1
+            "TBA. Comunicar con Jako.":
+                "TBA. Comunicando con Jako."
+            "TBA. Dejar de leer, vamos a movernos.":
+                "TBA. Hora de marcharse. Veamos a dónde se puede ir desde aquí..."
+                $ varComodin = 1
+    
+    $ varComodin = 0
+    
+    jump go_Hangar
