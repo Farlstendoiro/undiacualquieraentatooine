@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/conversaciones.rpy", line 1478: if statement expects a non-empty block.
+    if itemInvestigacion == 0:
+                              ^
+
+File "game/conversaciones.rpy", line 1479: expected statement.
+    elif conoceClawditaB == 0:
+                         ^
+
+Ren'Py Version: Ren'Py 7.3.2.320
+Tue Dec 29 18:28:04 2020
